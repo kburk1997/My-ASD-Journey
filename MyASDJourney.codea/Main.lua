@@ -18,6 +18,12 @@ function draw()
     elseif stage == 2 then
         
         --Katie make a mini game here
+
+        --User must pick correct answer in conversation
+        	--Sensory overload - a lot of background noise 
+    	fontSize(20)
+    	text("What color is this apple?", WIDTH/2, HEIGHT/2)
+
     end
     
 end
