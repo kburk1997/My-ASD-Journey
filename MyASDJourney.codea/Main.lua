@@ -2,18 +2,22 @@
 
 -- Use this function to perform your initial setup
 function setup()
-    print("Hello World!")
+    stage = 0
 end
 
 -- This function gets called once every frame
 function draw()
-    -- This sets a dark background color 
-    background(40, 40, 50)
-    sprite("Project:temp")
-    -- This sets the line thickness
-    strokeWidth(5)
-
-    -- Do your drawing here
+    -- This sets a dark background color
+    background(174, 174, 190, 255)
+    
+    if stage == 0 then
+        
+        
+    elseif stage == 1 then
+        
+    elseif stage == 2 then
+        
+        --Katie make a mini game here
+    end
     
 end
-
