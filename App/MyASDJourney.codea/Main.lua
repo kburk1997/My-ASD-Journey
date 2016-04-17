@@ -17,6 +17,14 @@ function setup()
     face2 = vec3(0,0,0)
     face3=vec3(0,0,0)
     speech.volume = 1
+bodies = {}
+    wall1 = physics.body(POLYGON, vec2(20,0), vec2(0,0), vec2(0,HEIGHT), vec2(20,HEIGHT))
+    wall1.type = STATIC
+    wall2 = physics.body(POLYGON, vec2(WIDTH-(20),0), vec2(WIDTH,0), vec2(WIDTH,HEIGHT), vec2(WIDTH-(20),HEIGHT))
+    wall2.type = STATIC
+    floor = physics.body(POLYGON, vec2(0,20), vec2(0,0), vec2(WIDTH,0), vec2(WIDTH,20))
+    floor.type = STATIC
+    floor = physics.body(POLYGON, vec2(0,HEIGHT-20), vec2(0,HEIGHT), vec2(WIDTH,HEIGHT), vec2(WIDTH,HEIGHT-20))
 end
 
 --Austin make your game here
@@ -72,11 +80,17 @@ function game2()
     sound(SOUND_EXPLODE, 45885)
     sound(SOUND_EXPLODE, 24166)
     fontSize(20)
+    physics.gravity(Gravity)
     
-    --Make four rectangles
-    draw_game2_rectangles()
     
     if bool then
+        bodies = {}
+        table.insert(bodies,makeBox(WIDTH/30,HEIGHT/30, (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30)))
+        table.insert(bodies,makeBox(WIDTH/30,(HEIGHT/6)+(HEIGHT/30),(WIDTH/2)-(WIDTH/15), (HEIGHT/4)-(1.75*HEIGHT/15)))
+        table.insert(bodies,makeBox(WIDTH/2,HEIGHT/30, (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30)))
+        table.insert(bodies,makeBox(WIDTH/2,(HEIGHT/6)+(HEIGHT/30), (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30)))
+    
+    
         item = itemList[math.random(1,5)]
         --Randomly select right answer
         --0|1
@@ -96,7 +110,8 @@ function game2()
     end
     bool = false
     
-    
+    --Make four rectangles
+    draw_game2_rectangles()
     fill(255)
     text("What color is this "..item.."?", WIDTH/2, HEIGHT/2)
     
@@ -181,4 +196,19 @@ function draw()
         game2()
     end
     
+end
+
+-- Helper function to create a box using a polygon body
+function makeBox(x,y,w,h)
+    -- Points are defined in counter-clockwise order
+    local body = physics.body(POLYGON,vec2(-w/2, h/2),
+    vec2(-w/2, -h/2), vec2(w/2, -h/2), vec2(w/2, h/2))
+    
+    -- Set the body's transform (position, angle)
+    body.x = x
+    body.y = y
+    -- Make movement smoother regardless of framerate
+    body.interpolate = true
+    
+    return body
 end
