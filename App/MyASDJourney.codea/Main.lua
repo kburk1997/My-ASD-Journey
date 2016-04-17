@@ -4,13 +4,13 @@ displayMode(FULLSCREEN_NO_BUTTONS)
 -- Use this function to perform your initial setup
 function setup()
     math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
-    stage = 0
+    stage = 2
     stageMax = 3
     bool = true
     item = ""
     touching = false
     right_answer_position = -1
-    itemList = {"apple","waffle","ball","box","table"}
+    itemList = {"apple","waffle","ball","box","table","sky","orange","glass"}
     points = 0
     face1 = vec3(0,0,0)
     face2 = vec3(0,0,0)
@@ -151,7 +151,7 @@ function game2()
         table.insert(bodies,makeBox(WIDTH/2,(HEIGHT/6)+(HEIGHT/30), (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30)))
     
     
-        item = itemList[math.random(1,5)]
+        item = itemList[math.random(1,#itemList)]
         --Randomly select right answer
         --0|1
         --2|3
@@ -174,10 +174,13 @@ function game2()
     draw_game2_rectangles()
     fill(255)
     text("What color is this "..item.."?", WIDTH/2, HEIGHT/2)
-    
+    fill(255,0,0,255)
     text("The "..item.." is green",WIDTH/4,HEIGHT/6+HEIGHT/8)
+    fill(0,0,255,255)
     text("The "..item.." is yellow",WIDTH*2.85/4,HEIGHT/6+HEIGHT/8)
+    fill(0,255,0,255)
     text("The "..item.." is red",WIDTH/4,HEIGHT/8)
+    fill(255,255,0,255)
     text("The "..item.." is blue",WIDTH*2.85/4,HEIGHT/8)
     
     --read touches
