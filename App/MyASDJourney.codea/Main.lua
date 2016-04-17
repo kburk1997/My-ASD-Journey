@@ -304,7 +304,7 @@ function game3()
         end
         text(" "..paragraph1[index].." ",px1[index],py1[index])
         index = index + 1
-        if index%rand_word == 0 then
+        if (1.*index)/(1.*rand_word) == math.floor(index/rand_word) then
             index = index + 1
         end
     end
@@ -351,6 +351,7 @@ function draw()
         fontSize(45)
         text("tap to begin",WIDTH/2,HEIGHT/2.4)
         text("SEIZURE RISK WARNING",WIDTH/2,HEIGHT/3)
+        text("by Austin Lubetkin and Kathleen Burkhardt",WIDTH/2,HEIGHT/3)
         if CurrentTouch.state == BEGAN then
             nextGame()
         end
