@@ -4,7 +4,7 @@ displayMode(FULLSCREEN_NO_BUTTONS)
 -- Use this function to perform your initial setup
 function setup()
     math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
-    stage = 1
+    stage = 2
     stageMax = 3
     bool = true
     item = ""
@@ -15,6 +15,7 @@ function setup()
     face1 = vec3(0,0,0)
     face2 = vec3(0,0,0)
     face3=vec3(0,0,0)
+    timer = os.time()
     speech.volume = 1
 bodies = {}
     wall1 = physics.body(POLYGON, vec2(20,0), vec2(0,0), vec2(0,HEIGHT), vec2(20,HEIGHT))
@@ -90,6 +91,13 @@ sprite("Project:Face"..math.floor((face3).x), WIDTH/4, 7.1*HEIGHT/8, WIDTH/14)
 sprite("Project:Nose"..math.floor(face3.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/38,HEIGHT/32)
 sprite("Project:eyes"..math.floor(face3.z), WIDTH/4, 7.24*HEIGHT/8, WIDTH/17)
 end
+fill(255)
+fontSize(50)
+text(math.floor(30+os.difftime(timer,os.time())),WIDTH/2,HEIGHT*7/8)
+if os.difftime(os.time(),timer) >= 30 then
+    bool=true
+    nextGame()
+end
 
 --touch functionality
     if CurrentTouch.state == BEGAN and touching then
@@ -112,6 +120,7 @@ end
 
 function nextGame()
     stage = math.random(1,stageMax)
+    timer = os.time()
 end
 
 --In this game, the user must select the right answer to "what color is this apple?"
@@ -121,7 +130,7 @@ function game2()
     sound(SOUND_EXPLODE, 24166)
     fontSize(20)
     physics.gravity(Gravity)
-    
+
     
     if bool then
         bodies = {}
@@ -202,13 +211,21 @@ function game2()
     if CurrentTouch.state == ENDED then
         touching=true
     end
-    
-    
+
+    fill(255)
+    fontSize(50)
+    text(math.floor(30+os.difftime(timer,os.time())),WIDTH/2,HEIGHT*7/8)
+    if os.difftime(os.time(),timer) >= 30 then
+        bool=true
+        nextGame()
+    end
+
 end
 
 --Draw the four rectangles for the answer choices
 function draw_game2_rectangles()
     rectMode(CORNER)
+    maintainbodies()
     fill(30,30,30,160)
     --Bottom left rectangleS
     rect(WIDTH/30,HEIGHT/30, (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30))
@@ -247,6 +264,23 @@ function draw()
         game3()
     end
     
+end
+
+function maintainbodies()
+    for i,body in ipairs(bodies) do
+        if body.position.x < 0 then
+            body.position.x = 0
+        elseif body.position.x > WIDTH then
+            body.position.x = WIDTH
+        end
+
+        if body.position.y < 0 then
+            body.position.y = 0
+        elseif body.position.y > HEIGHT then
+            body.position.y = HEIGHT
+        end
+
+    end
 end
 
 -- Helper function to create a box using a polygon body
