@@ -262,10 +262,18 @@ function game3()
     loop_index=1
     --Determine first sentence
     repeat
-        sentence1 = sentence1..((paragraph..rand_paragraph)[loop_index]).." "
-        if ((paragraph..rand_paragraph)[loop_index])=="." then
-            period=true
+        if rand_paragraph == 1 then
+            sentence1 = sentence1..(paragraph1[loop_index]).." "
+            if paragraph1[loop_index]=="." then
+                period=true
+            end
+        else
+            sentence1 = sentence1..(paragraph2[loop_index]).." "
+            if paragraph2[loop_index]=="." then
+                period=true
+            end
         end
+        
     until period == true
 end
 
