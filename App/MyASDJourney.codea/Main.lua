@@ -37,6 +37,14 @@ function game1()
     right_answer_position = math.random(1,3)
     
     face_list={face1,face2,face3}
+
+    --Draw faces
+
+    --Draw correct face in corner
+    --Width/14 is temporary
+    sprite("Project:Face"..right_answer_position, 0, HEIGHT, WIDTH/14)
+    sprite("Project:Nose"..right_answer_position, 0, HEIGHT, WIDTH/14)
+    sprite("Project:eyes"..right_answer_position, 0, HEIGHT, WIDTH/14)
 end
 
 function nextGame()
