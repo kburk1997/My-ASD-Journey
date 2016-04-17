@@ -98,6 +98,7 @@ end
                 stage = 0
             else
                 bool=true
+                nextGame()
             end
         end
     end
@@ -168,12 +169,14 @@ function game2()
                     stage = 0
                 else
                     bool = true
+                    nextGame()
                 end
             elseif CurrentTouch.y < HEIGHT/6 + (HEIGHT/4)-(1.75*HEIGHT/15) then
                 if right_answer_position == 0 then
                     stage = 0
                 else
                     bool = true
+                    nextGame()
                 end
             end
         else
@@ -182,12 +185,14 @@ function game2()
                     stage = 0
                 else
                     bool = true
+                    nextGame()
                 end
             elseif CurrentTouch.y < HEIGHT/6 + (HEIGHT/4)-(1.75*HEIGHT/15) then
                 if right_answer_position == 1 then
                     stage = 0
                 else
                     bool = true
+                    nextGame()
                 end
             end
         end
