@@ -45,13 +45,13 @@ function game2()
 
 
     if right_answer_position == 0 then
-
+        text("The "..item.." is green",,)
     elseif right_answer_position == 1 then
-
+        text("The "..item.." is yellow",,)
     elseif right_answer_position == 2 then
-
-    else
-
+        text("The "..item.." is red",,)
+    elseif right_answer_position == 3 then
+        text("The "..item.." is blue",,)
     end
 end
 
