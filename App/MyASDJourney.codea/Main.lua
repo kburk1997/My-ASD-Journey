@@ -260,60 +260,68 @@ function game3()
     if bool then
         rand_word=math.random(3,7)
         rand_paragraph=math.random(1,2)
+        loop_index=1
+
+        --Determine first sentence
+        repeat
+            if rand_paragraph == 1 then
+                sentence1 = sentence1..(paragraph1[loop_index]).." "
+                if paragraph1[loop_index]=="." then
+                    period=true
+                end
+            else
+                sentence1 = sentence1..(paragraph2[loop_index]).." "
+                if paragraph2[loop_index]=="." then
+                    period=true
+                end
+            end
+            loop_index = loop_index +1
+        until period == true
+
+        period=false
+
+        --Determine second sentence
+        repeat
+            if rand_paragraph == 1 then
+                sentence2 = sentence2..(paragraph1[loop_index]).." "
+                if paragraph1[loop_index]=="." then
+                    period=true
+                end
+            else
+                sentence2 = sentence2..(paragraph2[loop_index]).." "
+                if paragraph2[loop_index]=="." then
+                    period=true
+                end
+            end
+            loop_index = loop_index +1
+        until period == true
+
+        period=false
+
+        --Determine third sentence
+        repeat
+            if rand_paragraph == 1 then
+                sentence3 = sentence3..(paragraph1[loop_index]).." "
+                if paragraph1[loop_index]=="." then
+                    period=true
+                end
+            else
+                sentence3 = sentence3..(paragraph2[loop_index]).." "
+                if paragraph2[loop_index]=="." then
+                    period=true
+                end
+            end
+            loop_index = loop_index +1
+        until period == true
+
+        bool=false
     end
 
-    loop_index=1
-    --Determine first sentence
-    repeat
-        if rand_paragraph == 1 then
-            sentence1 = sentence1..(paragraph1[loop_index]).." "
-            if paragraph1[loop_index]=="." then
-                period=true
-            end
-        else
-            sentence1 = sentence1..(paragraph2[loop_index]).." "
-            if paragraph2[loop_index]=="." then
-                period=true
-            end
-        end
-        loop_index = loop_index +1
-    until period == true
-
-    period=false
-
-    --Determine second sentence
-    repeat
-        if rand_paragraph == 1 then
-            sentence2 = sentence2..(paragraph1[loop_index]).." "
-            if paragraph1[loop_index]=="." then
-                period=true
-            end
-        else
-            sentence2 = sentence2..(paragraph2[loop_index]).." "
-            if paragraph2[loop_index]=="." then
-                period=true
-            end
-        end
-        loop_index = loop_index +1
-    until period == true
-
-    period=false
-
-    --Determine third sentence
-    repeat
-        if rand_paragraph == 1 then
-            sentence3 = sentence3..(paragraph1[loop_index]).." "
-            if paragraph1[loop_index]=="." then
-                period=true
-            end
-        else
-            sentence3 = sentence3..(paragraph2[loop_index]).." "
-            if paragraph2[loop_index]=="." then
-                period=true
-            end
-        end
-        loop_index = loop_index +1
-    until period == true
+    print(sentence1)
+    print(sentence2)
+    print(sentence 3)
+    
+    
 end
 
 -- This function gets called once every frame
