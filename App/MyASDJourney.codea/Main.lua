@@ -4,8 +4,8 @@ displayMode(FULLSCREEN_NO_BUTTONS)
 -- Use this function to perform your initial setup
 function setup()
     math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
-    stage = 3
-    stageMax = 2
+    stage = 0
+    stageMax = 3
     bool = true
     item = ""
     touching = false
