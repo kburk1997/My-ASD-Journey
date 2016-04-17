@@ -16,6 +16,10 @@ end
     --while there is a lot of background noise and everything is blurred
 function game2()
     fontSize(20)
+    
+    --Make four rectangles  
+    draw_game2_rectangles()
+
     if bool then
         --Randomly select right answer
         --0|1
@@ -33,9 +37,6 @@ function game2()
     end
     bool = false
     text("What color is this apple?", WIDTH/2, HEIGHT/2)
-
-    --Make four rectangles  
-    draw_game2_rectangles()
 
 
 
