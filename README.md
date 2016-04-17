@@ -11,6 +11,9 @@ People on the autism spectrum* often get overwhelmed by sensory stimuli such as 
 ##*Disclaimers
 This game is based off of our own personal experiences as well as typical characteristics of autistic people, and does not reflect what every autistic person experiences. Autism is a spectrum, and as a spectrum, it affects everyone differently. The effects in this game are purposely over-dramatized so that other people can see a sharper contrast, thus empathize more strongly.
 
+##WARNING
+**Some of these effects may trigger seizures in epileptic users. Do not use this app if you have experienced seizures in the past.**
+
 ##More Info on Autism
 [About Autism - Autistic Self-Advocacy Network](http://autisticadvocacy.org/home/about-asan/about-autism/)
 

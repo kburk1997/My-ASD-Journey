@@ -67,6 +67,8 @@ sprite("Project:Face"..math.floor((face3).x), WIDTH/4, 7.1*HEIGHT/8, WIDTH/14)
 sprite("Project:Nose"..math.floor(face3.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/38,HEIGHT/32)
 sprite("Project:eyes"..math.floor(face3.z), WIDTH/4, 7.24*HEIGHT/8, WIDTH/17)
 end
+
+--draw other faces
 sprite("Project:Face"..math.floor((face1).x), WIDTH/4, HEIGHT/4, WIDTH/6)
 sprite("Project:Nose"..math.floor((face1).y), WIDTH/4, HEIGHT/4, WIDTH/24)
 sprite("Project:eyes"..math.floor((face1).z), WIDTH/4, 1.15*HEIGHT/4, WIDTH/7.5)
