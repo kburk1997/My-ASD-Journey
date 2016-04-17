@@ -5,7 +5,7 @@ displayMode(FULLSCREEN_NO_BUTTONS)
 function setup()
     math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
     stage = 2
-    stageMax = 3
+    stageMax = 2
     bool = true
     item = ""
     touching = false
@@ -23,12 +23,9 @@ function setup()
     sarcasm2=1
     rand_word=0
     rand_paragraph=1
-    sentence1=""
-    sentence2=""
-    sentence3=""
     loop_index=0
     period=false
-bodies = {}
+    bodies = {}
     wall1 = physics.body(POLYGON, vec2(20,0), vec2(0,0), vec2(0,HEIGHT), vec2(20,HEIGHT))
     wall1.type = STATIC
     wall2 = physics.body(POLYGON, vec2(WIDTH-(20),0), vec2(WIDTH,0), vec2(WIDTH,HEIGHT), vec2(WIDTH-(20),HEIGHT))
@@ -46,7 +43,7 @@ bodies = {}
     while index <= #paragraph1 do
         py1[index] = z
         px1[index] = i
-        i = i + textSize(" "..((paragraph1[index]).x).." ")
+        i = i + textSize(" "..((paragraph1[index])).." ").x
         index = index + 1
         if paragraph1[index] == "." then
             py1[index] = z
@@ -280,67 +277,8 @@ function game3()
         rand_word=math.random(3,7)
         rand_paragraph=math.random(1,2)
         loop_index=1
-        sentence1=""
-        sentence2=""
-        sentence3=""
-        --Determine first sentence
-        repeat
-            if rand_paragraph == 1 then
-                sentence1 = sentence1..(paragraph1[loop_index]).." "
-                if paragraph1[loop_index]=="." then
-                    period=true
-                end
-            else
-                sentence1 = sentence1..(paragraph2[loop_index]).." "
-                if paragraph2[loop_index]=="." then
-                    period=true
-                end
-            end
-            loop_index = loop_index +1
-        until period == true
 
-        period=false
 
-        --Determine second sentence
-        repeat
-            if rand_paragraph == 1 then
-                sentence2 = sentence2..(paragraph1[loop_index]).." "
-                if paragraph1[loop_index]=="." then
-                    period=true
-                end
-            else
-                sentence2 = sentence2..(paragraph2[loop_index]).." "
-                if paragraph2[loop_index]=="." then
-                    period=true
-                end
-            end
-            loop_index = loop_index +1
-        until period == true
-
-        period=false
-
-        --Determine third sentence
-        repeat
-            if rand_paragraph == 1 then
-                sentence3 = sentence3..(paragraph1[loop_index]).." "
-                if paragraph1[loop_index]=="." then
-                    period=true
-                end
-            else
-                sentence3 = sentence3..(paragraph2[loop_index]).." "
-                if paragraph2[loop_index]=="." then
-                    period=true
-                end
-            end
-            loop_index = loop_index +1
-        until period == true
-
-        bool=false
-    end
-
-    print(sentence1)
-    print(sentence2)
-    print(sentence3)
     
     
 end
