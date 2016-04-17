@@ -21,6 +21,15 @@ function game2()
         --0|1
         --2|3
         right_answer_position  = math.random(0,3)
+        if right_answer_position == 0 then
+            speech.say("The apple is green")
+        elseif right_answer_position == 1 then
+            speech.say("The apple is yellow")
+        elseif right_answer_position == 2 then
+
+        elseif right_answer_position == 3 then
+
+        end
     end
     bool = false
     text("What color is this apple?", WIDTH/2, HEIGHT/2)
