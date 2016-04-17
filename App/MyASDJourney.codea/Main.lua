@@ -54,15 +54,15 @@ function game1()
 --draw other faces
 temp = math.random(0,HEIGHT/2)
 sprite("Project:Face"..math.floor((face1).x), WIDTH/4, HEIGHT/4+temp, WIDTH/6)
-sprite("Project:Nose"..math.floor((face1).y), WIDTH/4, HEIGHT/4+temp, WIDTH/24)
+sprite("Project:Nose"..math.floor((face1).y), WIDTH/4, HEIGHT/4+temp, WIDTH/20)
 sprite("Project:eyes"..math.floor((face1).z), WIDTH/4, 1.15*HEIGHT/4+temp, WIDTH/7.5)
 temp = math.random(0,HEIGHT/2)
 sprite("Project:Face"..math.floor((face2).x), WIDTH/2, HEIGHT/4+temp, WIDTH/6)
-sprite("Project:Nose"..math.floor((face2).y), WIDTH/2, HEIGHT/4+temp, WIDTH/24)
+sprite("Project:Nose"..math.floor((face2).y), WIDTH/2, HEIGHT/4+temp, WIDTH/20)
 sprite("Project:eyes"..math.floor((face2).z), WIDTH/2, 1.15*HEIGHT/4+temp, WIDTH/7.5)
 temp = math.random(0,HEIGHT/2)
 sprite("Project:Face"..math.floor((face3).x), 3*WIDTH/4, HEIGHT/4+temp, WIDTH/6)
-sprite("Project:Nose"..math.floor((face3).y), 3*WIDTH/4,HEIGHT/4+temp, WIDTH/24)
+sprite("Project:Nose"..math.floor((face3).y), 3*WIDTH/4,HEIGHT/4+temp, WIDTH/20)
 sprite("Project:eyes"..math.floor((face3).z), 3*WIDTH/4, 1.15*HEIGHT/4+temp, WIDTH/7.5)
 
 --add tint
@@ -95,7 +95,6 @@ end
     if CurrentTouch.state == BEGAN and touching then
         touching = false
         --Check if position is below a certain threshold
-        if CurrentTouch.y < HEIGHT/2 then
             if CurrentTouch.x >= ((right_answer_position*WIDTH)/4)-(WIDTH/7.5) and 
                 CurrentTouch.x < ((right_answer_position*WIDTH)/4)+(WIDTH/7.5) then
                 stage = 0
@@ -103,7 +102,6 @@ end
                 bool=true
                 nextGame()
             end
-        end
     end
 
     if CurrentTouch.state == ENDED then
