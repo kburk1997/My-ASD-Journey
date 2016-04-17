@@ -4,7 +4,7 @@ displayMode(FULLSCREEN_NO_BUTTONS)
 -- Use this function to perform your initial setup
 function setup()
     math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
-    stage = 2
+    stage = 3
     stageMax = 2
     bool = true
     item = ""
@@ -40,10 +40,15 @@ function setup()
     z = HEIGHT*3/4
     index = 1
     fontSize(45)
+    col = vec3(0,0,0)
     while index <= #paragraph1 do
         py1[index] = z
         px1[index] = i
-        i = i + textSize(" "..((paragraph1[index])).." ").x
+        i = i + textSize(" "..((paragraph1[index])).." ")
+        if i >= WIDTH - 0.25*WIDTH/4 then
+            i = 0.25*WIDTH/4
+            z = z - HEIGHT/16
+        end
         index = index + 1
         if paragraph1[index] == "." then
             py1[index] = z
@@ -277,10 +282,17 @@ function game3()
         rand_word=math.random(3,7)
        -- rand_paragraph=math.random(1,2)
         loop_index=1
+        col = vec3(math.random(0,1),math.random(0,1),math.random(0,1))
     end
-    
-    
-    
+    index = 1
+    fontSize(45)
+    while index <= #paragraph1 do
+            fill(col.x*255,col.y*255,col.z*255,255)
+            if index == locations[1] or index == locations[2] then
+                col = vec3(math.random(0,1),math.random(0,1),math.random(0,1))
+            end
+            text(" "..paragraph1[index].." ",px1[index],py1[index])
+        end
 end
 
 -- This function gets called once every frame
