@@ -261,7 +261,9 @@ function game3()
         rand_word=math.random(3,7)
         rand_paragraph=math.random(1,2)
         loop_index=1
-
+        sentence1=""
+        sentence2=""
+        sentence3=""
         --Determine first sentence
         repeat
             if rand_paragraph == 1 then
