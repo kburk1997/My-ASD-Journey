@@ -82,15 +82,31 @@ function game2()
         touching = false
         if CurrentTouch.x < WIDTH/2 then
            if CurrentTouch.y < HEIGHT/6 then
-                
-            elseif CurrentTouch.y < HEIGHT/6 + (HEIGHT/4)-(1.75*HEIGHT/15) then
+                if right_answer_position == 2 then
 
+                else
+
+                end
+            elseif CurrentTouch.y < HEIGHT/6 + (HEIGHT/4)-(1.75*HEIGHT/15) then
+                if right_answer_position == 0 then
+
+                else
+
+                end
             end
         else
             if CurrentTouch.y < HEIGHT/6 then
+                if right_answer_position == 3 then
 
+                else
+
+                end
             elseif CurrentTouch.y < HEIGHT/6 + (HEIGHT/4)-(1.75*HEIGHT/15) then
+                if right_answer_position == 4 then
 
+                else
+
+                end
             end
         end
     end
