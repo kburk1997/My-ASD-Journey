@@ -1,6 +1,6 @@
 -- My ASD Journey
 supportedOrientations(LANDSCAPE_ANY)
---displayMode(FULLSCREEN_NO_BUTTONS)
+displayMode(FULLSCREEN_NO_BUTTONS)
 -- Use this function to perform your initial setup
 function setup()
     math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
@@ -52,18 +52,21 @@ function game1()
     --Draw faces
 
 --draw other faces
-sprite("Project:Face"..math.floor((face1).x), WIDTH/4, HEIGHT/4, WIDTH/6)
-sprite("Project:Nose"..math.floor((face1).y), WIDTH/4, HEIGHT/4, WIDTH/24)
-sprite("Project:eyes"..math.floor((face1).z), WIDTH/4, 1.15*HEIGHT/4, WIDTH/7.5)
-sprite("Project:Face"..math.floor((face2).x), WIDTH/2, HEIGHT/4, WIDTH/6)
-sprite("Project:Nose"..math.floor((face2).y), WIDTH/2, HEIGHT/4, WIDTH/24)
-sprite("Project:eyes"..math.floor((face2).z), WIDTH/2, 1.15*HEIGHT/4, WIDTH/7.5)
-sprite("Project:Face"..math.floor((face3).x), 3*WIDTH/4, HEIGHT/4, WIDTH/6)
-sprite("Project:Nose"..math.floor((face3).y), 3*WIDTH/4,HEIGHT/4, WIDTH/24)
-sprite("Project:eyes"..math.floor((face3).z), 3*WIDTH/4, 1.15*HEIGHT/4, WIDTH/7.5)
+temp = math.random(0,HEIGHT/2)
+sprite("Project:Face"..math.floor((face1).x), WIDTH/4, HEIGHT/4+temp, WIDTH/6)
+sprite("Project:Nose"..math.floor((face1).y), WIDTH/4, HEIGHT/4+temp, WIDTH/24)
+sprite("Project:eyes"..math.floor((face1).z), WIDTH/4, 1.15*HEIGHT/4+temp, WIDTH/7.5)
+temp = math.random(0,HEIGHT/2)
+sprite("Project:Face"..math.floor((face2).x), WIDTH/2, HEIGHT/4+temp, WIDTH/6)
+sprite("Project:Nose"..math.floor((face2).y), WIDTH/2, HEIGHT/4+temp, WIDTH/24)
+sprite("Project:eyes"..math.floor((face2).z), WIDTH/2, 1.15*HEIGHT/4+temp, WIDTH/7.5)
+temp = math.random(0,HEIGHT/2)
+sprite("Project:Face"..math.floor((face3).x), 3*WIDTH/4, HEIGHT/4+temp, WIDTH/6)
+sprite("Project:Nose"..math.floor((face3).y), 3*WIDTH/4,HEIGHT/4+temp, WIDTH/24)
+sprite("Project:eyes"..math.floor((face3).z), 3*WIDTH/4, 1.15*HEIGHT/4+temp, WIDTH/7.5)
 
 --add tint
-tint(255,255,255,114)
+tint(255,255,255,145)
 
 --draw noise
 for i= 1,6 do
