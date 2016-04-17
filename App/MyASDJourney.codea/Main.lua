@@ -32,6 +32,9 @@ function game1()
         face3 = Vec3(math.random(1,3), math.random(1,3), math.random(1,3))
     until face3 ~= face1 and face3 ~= face2
 
+    right_answer_position = math.random(1,3)
+
+    face_list={face1,face2,face3}
 end
 
 function nextGame()
