@@ -4,8 +4,8 @@ displayMode(FULLSCREEN_NO_BUTTONS)
 -- Use this function to perform your initial setup
 function setup()
     math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
-    stage = 2
-    stageMax = 3
+    stage = 0
+    stageMax = 2
     bool = true
     item = ""
     touching = false
@@ -251,8 +251,15 @@ function draw()
     background(174, 174, 190, 255)
     
     if stage == 0 then
-        
-        
+        fill(0)
+        fontSize(80)
+        text("Sensory Overload Simulator",WIDTH/2,HEIGHT/2)
+        fontSize(45)
+        text("tap to begin",WIDTH/2,HEIGHT/2.4)
+        text("SEIZURE RISK WARNING",WIDTH/2,HEIGHT/3)
+        if CurrentTouch.state == BEGAN then
+            nextGame()
+        end
     elseif stage == 1 then
         game1()
         
