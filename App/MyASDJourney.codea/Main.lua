@@ -1,6 +1,6 @@
 -- My ASD Journey
 supportedOrientations(PORTRAIT_ANY)
-displayMode(FULLSCREEN_NO_BUTTONS)displayMode(FULLSCREEN)
+displayMode(FULLSCREEN_NO_BUTTONS)
 -- Use this function to perform your initial setup
 function setup()
     stage = 2
