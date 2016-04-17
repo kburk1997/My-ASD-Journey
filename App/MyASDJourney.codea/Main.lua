@@ -288,6 +288,7 @@ function game3()
         col = vec3(math.random(0,1),math.random(0,1),math.random(0,1))
         fill(col.x*255,col.y*255,col.z*255,255)
         rect(WIDTH/4,HEIGHT/15, WIDTH/8, WIDTH/8)
+        bool=false
     end
     index = 1
     fontSize(45)
