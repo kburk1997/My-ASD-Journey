@@ -5,16 +5,22 @@ displayMode(FULLSCREEN_NO_BUTTONS)
 function setup()
      math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
     stage = 2
+    stageMax = 2
     bool = true
     item = ""
     touching = false
      right_answer_position = -1
     itemList = {"apple","waffle","ball","box","table"}
+    points = 0
 end
 
 --Austin make your game here
 function game1()
 
+end
+
+function nextGame()
+    stage = math.random(1,stageMax)
 end
 
 --In this game, the user must select the right answer to "what color is this apple?"
@@ -61,13 +67,13 @@ function game2()
         touching = false
         if CurrentTouch.x < WIDTH/2 then
            if CurrentTouch.y < HEIGHT/6 then
-
+                
             elseif CurrentTouch.y < HEIGHT/6 + (HEIGHT/4)-(1.75*HEIGHT/15) then
 
             end
         else
             if CurrentTouch.y < HEIGHT/6 then
-                
+
             elseif CurrentTouch.y < HEIGHT/6 + (HEIGHT/4)-(1.75*HEIGHT/15) then
 
             end
