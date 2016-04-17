@@ -5,7 +5,7 @@ displayMode(FULLSCREEN_NO_BUTTONS)
 function setup()
     math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
     stage = 0
-    stageMax = 2
+    stageMax = 3
     bool = true
     item = ""
     touching = false
@@ -18,8 +18,16 @@ function setup()
     timer = os.time()
     speech.volume = 1
     paragraph1={"I","like","cats",".","I","have","over","100","pictures","of","my","cats","on","my","phone",".","I","am","definitely","not","a","crazy","cat","lady","."}
+    paragraph2={}
+    sarcasm1=3
+    sarcasm2=1
     rand_word=0
     rand_paragraph=1
+    sentence1=""
+    sentence2=""
+    sentence3=""
+    loop_index=0
+    period=false
 bodies = {}
     wall1 = physics.body(POLYGON, vec2(20,0), vec2(0,0), vec2(0,HEIGHT), vec2(20,HEIGHT))
     wall1.type = STATIC
@@ -251,6 +259,14 @@ function game3()
         rand_paragraph=math.random(1,2)
     end
 
+    loop_index=1
+    --Determine first sentence
+    repeat
+        sentence1 = sentence1..((paragraph..rand_paragraph)[loop_index]).." "
+        if ((paragraph..rand_paragraph)[loop_index])=="." then
+            period=true
+        end
+    until period == true
 end
 
 -- This function gets called once every frame
