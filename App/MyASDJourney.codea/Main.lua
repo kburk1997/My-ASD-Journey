@@ -63,12 +63,14 @@ sprite("Project:Nose"..math.floor((face3).y), 3*WIDTH/4,HEIGHT/4, WIDTH/24)
 sprite("Project:eyes"..math.floor((face3).z), 3*WIDTH/4, 1.15*HEIGHT/4, WIDTH/7.5)
 
 --add tint
-tint(255,255,255,82)
+tint(255,255,255,114)
 
 --draw noise
-for i= 1,4 do
+for i= 1,6 do
     sprite("Project:noise"..i, WIDTH/2, HEIGHT/2, math.random(WIDTH, 2*WIDTH), math.random(HEIGHT, 2*HEIGHT))
 end
+
+tint(255,255,255,255)
 
 --Draw correct face in corner
     if right_answer_position == 1 then
