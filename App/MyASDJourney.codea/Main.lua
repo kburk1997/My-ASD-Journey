@@ -34,7 +34,7 @@ function draw()
     	rect(WIDTH/2,HEIGHT/30, (WIDTH)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30))
 
     	--Top right
-    	rect(WIDTH/2,(HEIGHT/6+HEIGHT/30), (WIDTH)-(WIDTH/15), (HEIGHT/4)-(1.75*HEIGHT/15))
+    	rect(WIDTH/2,(HEIGHT/6)+(HEIGHT/30), (WIDTH)-(WIDTH/15), (HEIGHT/4)-(1.75*HEIGHT/15))
 
 
     end
