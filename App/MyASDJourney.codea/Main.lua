@@ -286,20 +286,27 @@ function game3()
        -- rand_paragraph=math.random(1,2)
         loop_index=1
         col = vec3(math.random(0,1),math.random(0,1),math.random(0,1))
+        fill(col.x*255,col.y*255,col.z*255,255)
+        rect(WIDTH/4,HEIGHT/15, WIDTH/8, WIDTH/8)
     end
     index = 1
     fontSize(45)
     while index <= #paragraph1 do
-
+        fill(col.x*255,col.y*255,col.z*255,255)
+        if index == locations[1] or index == locations[2] then
+            col = vec3(math.random(0,1),math.random(0,1),math.random(0,1))
             fill(col.x*255,col.y*255,col.z*255,255)
-            if index == locations[1] or index == locations[2] then
-                col = vec3(math.random(0,1),math.random(0,1),math.random(0,1))
+            if index == locations[1] then
+                rect(WIDTH/2,HEIGHT/15, WIDTH/8, WIDTH/8)
+            else
+                rect(3*WIDTH/4,HEIGHT/15, WIDTH/8, WIDTH/8)
             end
-            text(" "..paragraph1[index].." ",px1[index],py1[index])
+        end
+        text(" "..paragraph1[index].." ",px1[index],py1[index])
+        index = index + 1
+        if index%rand_word == 0 then
             index = index + 1
-            if index%rand_word == 0 then
-                index = index + 1
-            end
+        end
     end
 end
 
