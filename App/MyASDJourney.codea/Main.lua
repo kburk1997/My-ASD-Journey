@@ -273,7 +273,7 @@ function game3()
                 period=true
             end
         end
-        
+        loop_index = loop_index +1
     until period == true
 end
 
