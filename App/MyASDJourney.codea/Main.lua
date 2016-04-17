@@ -159,6 +159,7 @@ end
 --In this game, the user must select the right answer to "what color is this apple?"
 --while there is a lot of background noise and everything is blurred
 function game2()
+    textMode(CENTER)
     sound(SOUND_EXPLODE, 45885)
     sound(SOUND_EXPLODE, 24166)
     fontSize(20)
