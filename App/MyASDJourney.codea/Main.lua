@@ -275,10 +275,10 @@ function game3()
     --define random nth word to disappear
     if bool then
         rand_word=math.random(3,7)
-        rand_paragraph=math.random(1,2)
+       -- rand_paragraph=math.random(1,2)
         loop_index=1
-
-
+    end
+    
     
     
 end
