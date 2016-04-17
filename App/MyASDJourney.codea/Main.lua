@@ -84,6 +84,24 @@ for i= 1,6 do
     sprite("Project:noise"..i, WIDTH/2, HEIGHT/2, math.random(WIDTH, 2*WIDTH), math.random(HEIGHT, 2*HEIGHT))
 end
 
+--touch functionality
+    if CurrentTouch.state == BEGAN and touching then
+        touching = false
+        --Check if position is below a certain threshold
+        if CurrentTouch.y < HEIGHT/2 then
+            if CurrentTouch.x >= ((right_answer_position*WIDTH)/4)-(WIDTH/7.5) and 
+                CurrentTouch.x < ((right_answer_position*WIDTH)/4)+(WIDTH/7.5) then
+                stage = 0
+            else
+                bool=true
+            end
+        end
+    end
+
+    if CurrentTouch.state == ENDED then
+        touching=true
+    end
+
 end
 
 function nextGame()
