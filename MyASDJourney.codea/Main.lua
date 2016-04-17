@@ -24,6 +24,9 @@ function draw()
     	fontSize(20)
     	text("What color is this apple?", WIDTH/2, HEIGHT/2)
 
+    	--Make four rectangles  
+    	rect(WIDTH/30,HEIGHT/30, (WIDTH/2)-(WIDTH/15), (HEIGHT/8)-(HEIGHT/15))
+
     end
     
 end
