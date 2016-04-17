@@ -319,7 +319,7 @@ function game3()
 
     print(sentence1)
     print(sentence2)
-    print(sentence 3)
+    print(sentence3)
     
     
 end
