@@ -6,6 +6,7 @@ function setup()
     bool = true
     item = ""
      right_answer_position = -1
+
 end
 
 --Austin make your game here
@@ -53,7 +54,7 @@ end
 
 --Draw the four rectangles for the answer choices
 function draw_game2_rectangles()
-    
+    rectMode(CORNERS)
     --Bottom left rectangleS
     rect(WIDTH/30,HEIGHT/30, (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30))
 
