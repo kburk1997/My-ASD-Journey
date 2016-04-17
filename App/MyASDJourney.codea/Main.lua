@@ -278,6 +278,42 @@ function game3()
         end
         loop_index = loop_index +1
     until period == true
+
+    period=false
+
+    --Determine second sentence
+    repeat
+        if rand_paragraph == 1 then
+            sentence2 = sentence2..(paragraph1[loop_index]).." "
+            if paragraph1[loop_index]=="." then
+                period=true
+            end
+        else
+            sentence2 = sentence2..(paragraph2[loop_index]).." "
+            if paragraph2[loop_index]=="." then
+                period=true
+            end
+        end
+        loop_index = loop_index +1
+    until period == true
+
+    period=false
+
+    --Determine third sentence
+    repeat
+        if rand_paragraph == 1 then
+            sentence3 = sentence3..(paragraph1[loop_index]).." "
+            if paragraph1[loop_index]=="." then
+                period=true
+            end
+        else
+            sentence3 = sentence3..(paragraph2[loop_index]).." "
+            if paragraph2[loop_index]=="." then
+                period=true
+            end
+        end
+        loop_index = loop_index +1
+    until period == true
 end
 
 -- This function gets called once every frame
