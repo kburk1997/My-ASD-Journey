@@ -57,9 +57,9 @@ function game1()
 
     --Draw correct face in corner
     --Width/14 is temporary
-    sprite("Project:Face"..right_answer_position, 0, HEIGHT, WIDTH/14)
-    sprite("Project:Nose"..right_answer_position, 0, HEIGHT, WIDTH/28)
-    sprite("Project:eyes"..right_answer_position, 0, HEIGHT, WIDTH/20)
+    sprite("Project:Face"..right_answer_position, WIDTH/28, 7*HEIGHT/8, WIDTH/14)
+    sprite("Project:Nose"..right_answer_position, WIDTH/56, 7*HEIGHT/8, WIDTH/28)
+    sprite("Project:eyes"..right_answer_position, WIDTH/40, 7*HEIGHT/8, WIDTH/20)
 
     --Loop through face list
     for i = 1,3 do
