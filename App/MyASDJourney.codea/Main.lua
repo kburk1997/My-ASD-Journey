@@ -21,22 +21,29 @@ end
 
 --Austin make your game here
 function game1()
+
+    if bool then
     --Generate random vec3
-    face1 = vec3(math.random(1,3), math.random(1,3), math.random(1,3))
+        face1 = vec3(math.random(1,3), math.random(1,3), math.random(1,3))
+        
+        --Generate a unique second face
+        repeat
+        face2 = vec3(math.random(1,3), math.random(1,3), math.random(1,3))
+        until face2 ~= face1
+        
+        --Generate a unique third face
+        repeat
+        face3 = vec3(math.random(1,3), math.random(1,3), math.random(1,3))
+        until face3 ~= face1 and face3 ~= face2
+        
+        right_answer_position = math.random(1,3)
+        
+        face_list={face1,face2,face3}
+
+        bool=false
+    end
+
     
-    --Generate a unique second face
-    repeat
-    face2 = vec3(math.random(1,3), math.random(1,3), math.random(1,3))
-    until face2 ~= face1
-    
-    --Generate a unique third face
-    repeat
-    face3 = vec3(math.random(1,3), math.random(1,3), math.random(1,3))
-    until face3 ~= face1 and face3 ~= face2
-    
-    right_answer_position = math.random(1,3)
-    
-    face_list={face1,face2,face3}
 
     --Draw faces
 
