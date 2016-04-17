@@ -302,11 +302,11 @@ function game3()
                 rect(3*WIDTH/4,HEIGHT/15, WIDTH/8, WIDTH/8)
             end
         end
+        if (1.*index)/(1.*rand_word) ~= math.floor(index/rand_word) then
         text(" "..paragraph1[index].." ",px1[index],py1[index])
-        index = index + 1
-        if (1.*index)/(1.*rand_word) == math.floor(index/rand_word) then
-            index = index + 1
         end
+        index = index + 1
+
     end
 
     if CurrentTouch.state == BEGAN and touching then
@@ -351,7 +351,7 @@ function draw()
         fontSize(45)
         text("tap to begin",WIDTH/2,HEIGHT/2.4)
         text("SEIZURE RISK WARNING",WIDTH/2,HEIGHT/3)
-        text("by Austin Lubetkin and Kathleen Burkhardt",WIDTH/2,HEIGHT/3)
+        text("by Austin Lubetkin and Kathleen Burkhardt",WIDTH/2,HEIGHT/4)
         if CurrentTouch.state == BEGAN then
             nextGame()
         end
