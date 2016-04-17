@@ -46,10 +46,10 @@ function game2()
 
     fill(255)
 
-        text("The "..item.." is green",WIDTH/4,HEIGHT/6+HEIGHT/8)
-        text("The "..item.." is yellow",WIDTH*2.85/4,HEIGHT/6+HEIGHT/8)
-        text("The "..item.." is red",WIDTH/4,HEIGHT/8)
-        text("The "..item.." is blue",WIDTH*2.85/4,HEIGHT/8)
+    text("The "..item.." is green",WIDTH/4,HEIGHT/6+HEIGHT/8)
+    text("The "..item.." is yellow",WIDTH*2.85/4,HEIGHT/6+HEIGHT/8)
+    text("The "..item.." is red",WIDTH/4,HEIGHT/8)
+    text("The "..item.." is blue",WIDTH*2.85/4,HEIGHT/8)
 end
 
 --Draw the four rectangles for the answer choices
