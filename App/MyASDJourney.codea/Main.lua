@@ -306,7 +306,7 @@ function game3()
             end
         end
         if (1.*index)/(1.*rand_word) ~= math.floor(index/rand_word) then
-        text(" "..paragraph1[index].." ",px1[index],py1[index])
+        text(" "..paragraph1[index].." ",px1[index]-25,py1[index])
         end
         index = index + 1
 
@@ -348,6 +348,7 @@ function draw()
     background(174, 174, 190, 255)
     
     if stage == 0 then
+        textMode(CENTER)
         fill(0)
         fontSize(80)
         text("Sensory Overload Simulator",WIDTH/2,HEIGHT/2)
