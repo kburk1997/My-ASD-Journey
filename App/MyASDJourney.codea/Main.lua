@@ -80,7 +80,7 @@ sprite("Project:Nose"..math.floor((face3).y), 3*WIDTH/4,HEIGHT/4, WIDTH/24)
 sprite("Project:eyes"..math.floor((face3).z), 3*WIDTH/4, 1.15*HEIGHT/4, WIDTH/7.5)
 
 --add tint
-tint(255,255,255,70)
+tint(255,255,255,35)
 
 --draw noise
 for i= 1,6 do
