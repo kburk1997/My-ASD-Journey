@@ -1,10 +1,10 @@
 -- My ASD Journey
 supportedOrientations(LANDSCAPE_ANY)
-displayMode(FULLSCREEN_NO_BUTTONS)
+--displayMode(FULLSCREEN_NO_BUTTONS)
 -- Use this function to perform your initial setup
 function setup()
     math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
-    stage = 2
+    stage = 1
     stageMax = 2
     bool = true
     item = ""
@@ -12,7 +12,6 @@ function setup()
     right_answer_position = -1
     itemList = {"apple","waffle","ball","box","table"}
     points = 0
-    face_list={vec3(0,0,0),vec3(0,0,0),vec3(0,0,0)}
     face1 = vec3(0,0,0)
     face2 = vec3(0,0,0)
     face3=vec3(0,0,0)
@@ -45,28 +44,38 @@ function game1()
         until face3 ~= face1 and face3 ~= face2
         
         right_answer_position = math.random(1,3)
-        
-        face_list={face1,face2,face3}
 
         bool=false
     end
 
-    
 
     --Draw faces
 
     --Draw correct face in corner
-    --Width/14 is temporary
-    sprite("Project:Face"..right_answer_position, WIDTH/28, 7*HEIGHT/8, WIDTH/14)
-    sprite("Project:Nose"..right_answer_position, WIDTH/56, 7*HEIGHT/8, WIDTH/28)
-    sprite("Project:eyes"..right_answer_position, WIDTH/40, 7*HEIGHT/8, WIDTH/20)
 
-    --Loop through face list
-    for i = 1,3 do
-        sprite("Project:Face"..face_list[i].x,(i*WIDTH)/4,HEIGHT/6,WIDTH/14)
-        sprite("Project:Nose"..face_list[i].y,(i*WIDTH)/4,HEIGHT/6,WIDTH/28)
-        sprite("Project:eyes"..face_list[i].z,(i*WIDTH)/4,HEIGHT/6,WIDTH/20)
-    end 
+    if right_answer_position == 1 then
+    spriteMode(CENTER)
+    sprite("Project:Face"..math.floor((face1).x), WIDTH/4, 7.1*HEIGHT/8, WIDTH/14)
+    sprite("Project:Nose"..math.floor(face1.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/35)
+    sprite("Project:eyes"..math.floor(face1.z), WIDTH/4, 7.2*HEIGHT/8, WIDTH/17)
+    elseif right_answer_position == 2 then
+sprite("Project:Face"..math.floor((face2).x), WIDTH/4, 7.1*HEIGHT/8, WIDTH/14)
+sprite("Project:Nose"..math.floor(face2.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/35)
+sprite("Project:eyes"..math.floor(face2.z), WIDTH/4, 7.2*HEIGHT/8, WIDTH/17)
+    elseif right_answer_position == 3 then
+sprite("Project:Face"..math.floor((face3).x), WIDTH/4, 7.1*HEIGHT/8, WIDTH/14)
+sprite("Project:Nose"..math.floor(face3.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/35)
+sprite("Project:eyes"..math.floor(face3.z), WIDTH/4, 7.2*HEIGHT/8, WIDTH/17)
+end
+sprite("Project:Face"..(face1).x, WIDTH/4, 7*HEIGHT/8, WIDTH/14)
+sprite("Project:Nose"..(face1).y, WIDTH/4, 7*HEIGHT/8, WIDTH/28)
+sprite("Project:eyes"..(face1).z, WIDTH/4, 7*HEIGHT/8, WIDTH/20)
+sprite("Project:Face"..(face2).x, WIDTH/28, 7*HEIGHT/8, WIDTH/14)
+sprite("Project:Nose"..(face2).y, WIDTH/56, 7*HEIGHT/8, WIDTH/28)
+sprite("Project:eyes"..(face2).z, WIDTH/40, 7*HEIGHT/8, WIDTH/20)
+sprite("Project:Face"..(face3).x, WIDTH/28, 7*HEIGHT/8, WIDTH/14)
+sprite("Project:Nose"..(face3).y, WIDTH/56, 7*HEIGHT/8, WIDTH/28)
+sprite("Project:eyes"..(face3).z, WIDTH/40, 7*HEIGHT/8, WIDTH/20)
 
 end
 
