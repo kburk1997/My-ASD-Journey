@@ -308,9 +308,30 @@ function game3()
             index = index + 1
         end
     end
+
+    if CurrentTouch.state == BEGAN and touching then
+        --Make sure user is actually touching a square
+        if CurrentTouch.y < ((HEIGHT/15)+(WIDTH/8)) then
+            if CurrentTouch.x >= (()-(WIDTH/8)) then
+                --Sarcasm is #3 - correct
+                stage=0
+            else
+                bool=true
+                nextGame()
+                decider = math.random(1,1000)
+            end
+        end
+
+    end
+
+    if CurrentTouch.state == ENDED then
+        touching=true
+    end
+    
     fill(255)
     fontSize(50)
     text(math.floor(30+os.difftime(timer,os.time())),WIDTH/2,HEIGHT*7/8)
+
     if os.difftime(os.time(),timer) >= 30 then
         bool=true
         nextGame()
