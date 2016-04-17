@@ -1,5 +1,5 @@
 -- My ASD Journey
-supportedOrientations(PORTRAIT_ANY)
+supportedOrientations(LANDSCAPE_ANY)
 displayMode(FULLSCREEN_NO_BUTTONS)displayMode(FULLSCREEN)
 -- Use this function to perform your initial setup
 function setup()
