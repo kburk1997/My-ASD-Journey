@@ -12,7 +12,7 @@
 		DB0DC0B818C4608A005F4723 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0DC0B718C4608A005F4723 /* CoreLocation.framework */; };
 		DB0DC0BA18C4608E005F4723 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0DC0B918C4608E005F4723 /* Accelerate.framework */; };
 		DB3B3F6317815CFE00A992DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3B3F6217815CFE00A992DB /* Security.framework */; };
-		DB5578F31BB9185E0024F638 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = DB5578F21BB9185E0024F638 /* Assets */; settings = {ASSET_TAGS = (); }; };
+		DB5578F31BB9185E0024F638 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = DB5578F21BB9185E0024F638 /* Assets */; };
 		DB5E404418CD80570001CC1F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5E404318CD80570001CC1F /* Social.framework */; };
 		DB8A004716F2DBDA005F87A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8A004616F2DBDA005F87A6 /* UIKit.framework */; };
 		DB8A004916F2DBDA005F87A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8A004816F2DBDA005F87A6 /* Foundation.framework */; };
@@ -49,11 +49,11 @@
 		DBC21B9C19ED75A000CD519E /* GameCenterAddon.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE375F19E9F77800E382EC /* GameCenterAddon.m */; };
 		DBCE376219E9F82D00E382EC /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCE376119E9F82D00E382EC /* GameKit.framework */; };
 		DBE0BEA31A8B693D0010DC06 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE0BEA21A8B693D0010DC06 /* iAd.framework */; };
-		DBEA4FC31BC23A0200000A55 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBEA4FC21BC23A0200000A55 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		DBEA4FC81BC243D800000A55 /* LaunchBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEA4FC41BC243D800000A55 /* LaunchBackground.png */; settings = {ASSET_TAGS = (); }; };
-		DBEA4FC91BC243D800000A55 /* LaunchLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEA4FC51BC243D800000A55 /* LaunchLogo.png */; settings = {ASSET_TAGS = (); }; };
-		DBEA4FCA1BC243D800000A55 /* LaunchLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEA4FC61BC243D800000A55 /* LaunchLogo@2x.png */; settings = {ASSET_TAGS = (); }; };
-		DBEA4FCB1BC243D800000A55 /* LaunchLogo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEA4FC71BC243D800000A55 /* LaunchLogo@3x.png */; settings = {ASSET_TAGS = (); }; };
+		DBEA4FC31BC23A0200000A55 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBEA4FC21BC23A0200000A55 /* Launch Screen.storyboard */; };
+		DBEA4FC81BC243D800000A55 /* LaunchBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEA4FC41BC243D800000A55 /* LaunchBackground.png */; };
+		DBEA4FC91BC243D800000A55 /* LaunchLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEA4FC51BC243D800000A55 /* LaunchLogo.png */; };
+		DBEA4FCA1BC243D800000A55 /* LaunchLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEA4FC61BC243D800000A55 /* LaunchLogo@2x.png */; };
+		DBEA4FCB1BC243D800000A55 /* LaunchLogo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBEA4FC71BC243D800000A55 /* LaunchLogo@3x.png */; };
 		DBF0F5A91A3D0B78007693C1 /* iAdsAddon.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF0F5A71A3D0B78007693C1 /* iAdsAddon.m */; };
 /* End PBXBuildFile section */
 
@@ -322,6 +322,11 @@
 			attributes = {
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = MyCompany;
+				TargetAttributes = {
+					DB8A004216F2DBDA005F87A6 = {
+						DevelopmentTeam = GP8729KYLX;
+					};
+				};
 			};
 			buildConfigurationList = DB8A003E16F2DBDA005F87A6 /* Build configuration list for PBXProject "MyASDJourney" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -471,6 +476,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyASDJourney/MyASDJourney-Prefix.pch";
 				INFOPLIST_FILE = "MyASDJourney/MyASDJourney-Info.plist";
@@ -484,6 +491,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -494,6 +502,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyASDJourney/MyASDJourney-Prefix.pch";
 				INFOPLIST_FILE = "MyASDJourney/MyASDJourney-Info.plist";
@@ -507,6 +517,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
