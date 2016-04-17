@@ -16,6 +16,7 @@ function setup()
     face2 = vec3(0,0,0)
     face3=vec3(0,0,0)
     timer = os.time()
+    decider = math.random(1,1000)
     speech.volume = 1
     paragraph1={"I","like","cats",".","I","have","over","100","pictures","of","my","cats","on","my","phone",".","I","am","definitely","not","a","crazy","cat","lady","."}
     paragraph2={}
@@ -277,7 +278,9 @@ end
 
 --Word game - identify which sentence is sarcasm
 function game3()
+    textMode(CORNER)
     --define random nth word to disappear
+    math.randomseed(decider)
     if bool then
         rand_word=math.random(3,7)
        -- rand_paragraph=math.random(1,2)
@@ -287,11 +290,16 @@ function game3()
     index = 1
     fontSize(45)
     while index <= #paragraph1 do
+
             fill(col.x*255,col.y*255,col.z*255,255)
             if index == locations[1] or index == locations[2] then
                 col = vec3(math.random(0,1),math.random(0,1),math.random(0,1))
             end
             text(" "..paragraph1[index].." ",px1[index],py1[index])
+            index = index + 1
+            if index/rand_word == 0 then
+                index = index + 1
+            end
         end
 end
 
