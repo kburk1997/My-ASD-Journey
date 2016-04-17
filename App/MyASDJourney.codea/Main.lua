@@ -3,6 +3,8 @@
 -- Use this function to perform your initial setup
 function setup()
     stage = 0
+    bool = true
+     right_answer_position = -1
 end
 
 --Austin make your game here
@@ -14,16 +16,20 @@ end
     --while there is a lot of background noise and everything is blurred
 function game2()
     fontSize(20)
+    if bool then
+        --Randomly select right answer
+        --0|1
+        --2|3
+        right_answer_position  = math.random(0,3)
+    end
+    bool = false
     text("What color is this apple?", WIDTH/2, HEIGHT/2)
 
     --Make four rectangles  
     draw_game2_rectangles()
 
-    --Randomly select right answer
-    --0|1
-    --2|3
 
-    right_answer_position = math.random(0,3)
+
 
     if right_answer_position == 0 then
 
