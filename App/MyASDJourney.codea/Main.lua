@@ -56,16 +56,16 @@ function game1()
     if right_answer_position == 1 then
     spriteMode(CENTER)
     sprite("Project:Face"..math.floor((face1).x), WIDTH/4, 7.1*HEIGHT/8, WIDTH/14)
-    sprite("Project:Nose"..math.floor(face1.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/38)
-    sprite("Project:eyes"..math.floor(face1.z), WIDTH/4, 7.2*HEIGHT/8, WIDTH/17)
+    sprite("Project:Nose"..math.floor(face1.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/38,HEIGHT/32)
+    sprite("Project:eyes"..math.floor(face1.z), WIDTH/4, 7.24*HEIGHT/8, WIDTH/17)
     elseif right_answer_position == 2 then
 sprite("Project:Face"..math.floor((face2).x), WIDTH/4, 7.1*HEIGHT/8, WIDTH/14)
-sprite("Project:Nose"..math.floor(face2.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/38)
-sprite("Project:eyes"..math.floor(face2.z), WIDTH/4, 7.2*HEIGHT/8, WIDTH/17)
+sprite("Project:Nose"..math.floor(face2.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/38,HEIGHT/32)
+sprite("Project:eyes"..math.floor(face2.z), WIDTH/4, 7.24*HEIGHT/8, WIDTH/17)
     elseif right_answer_position == 3 then
 sprite("Project:Face"..math.floor((face3).x), WIDTH/4, 7.1*HEIGHT/8, WIDTH/14)
-sprite("Project:Nose"..math.floor(face3.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/38)
-sprite("Project:eyes"..math.floor(face3.z), WIDTH/4, 7.2*HEIGHT/8, WIDTH/17)
+sprite("Project:Nose"..math.floor(face3.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/38,HEIGHT/32)
+sprite("Project:eyes"..math.floor(face3.z), WIDTH/4, 7.24*HEIGHT/8, WIDTH/17)
 end
 sprite("Project:Face"..(face1).x, WIDTH/4, 7*HEIGHT/8, WIDTH/14)
 sprite("Project:Nose"..(face1).y, WIDTH/4, 7*HEIGHT/8, WIDTH/28)
