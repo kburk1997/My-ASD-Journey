@@ -5,7 +5,7 @@ displayMode(FULLSCREEN_NO_BUTTONS)
 function setup()
     math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
     stage = 1
-    stageMax = 2
+    stageMax = 3
     bool = true
     item = ""
     touching = false
@@ -223,6 +223,11 @@ function draw_game2_rectangles()
     rect(WIDTH/2,(HEIGHT/6)+(HEIGHT/30), (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30))
 end
 
+--Word game - identify which sentence is sarcasm
+function game3()
+
+end
+
 -- This function gets called once every frame
 function draw()
     -- This sets a dark background color
@@ -238,6 +243,8 @@ function draw()
         
         --Katie make a mini game here
         game2()
+    elseif stage == 3 then
+        game3()
     end
     
 end
