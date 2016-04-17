@@ -37,7 +37,7 @@ function setup()
     locations = {}
     py1 = {}
     px1 = {}
-    i = 0.25*WIDTH/4
+    i = 0.125*WIDTH/4
     z = HEIGHT*3/4
     index = 1
     fontSize(45)
@@ -46,8 +46,8 @@ function setup()
         py1[index] = z
         px1[index] = i
         i = i + textSize(" "..((paragraph1[index])).." ")
-        if i >= WIDTH - 0.25*WIDTH/4 then
-            i = 0.25*WIDTH/4
+        if i >= WIDTH - 0.375*WIDTH/4 then
+            i = 0.125*WIDTH/4
             z = z - HEIGHT/16
         end
         index = index + 1
@@ -307,6 +307,14 @@ function game3()
         if index%rand_word == 0 then
             index = index + 1
         end
+    end
+    fill(255)
+    fontSize(50)
+    text(math.floor(30+os.difftime(timer,os.time())),WIDTH/2,HEIGHT*7/8)
+    if os.difftime(os.time(),timer) >= 30 then
+        bool=true
+        nextGame()
+        decider = math.random(1,1000)
     end
 end
 
