@@ -36,6 +36,7 @@ function game2()
     end
 end
 
+--Draw the four rectangles for the answer choices
 function draw_game2_rectangles()
     
     --Bottom left rectangleS
