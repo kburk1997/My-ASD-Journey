@@ -312,7 +312,7 @@ function game3()
     if CurrentTouch.state == BEGAN and touching then
         --Make sure user is actually touching a square
         if CurrentTouch.y < ((HEIGHT/15)+(WIDTH/8)) then
-            if CurrentTouch.x >= (()-(WIDTH/8)) then
+            if CurrentTouch.x > ((3*WIDTH/4)-(WIDTH/8)) then
                 --Sarcasm is #3 - correct
                 stage=0
             else
