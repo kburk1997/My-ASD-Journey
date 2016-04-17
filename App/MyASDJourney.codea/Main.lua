@@ -12,10 +12,25 @@ function setup()
      right_answer_position = -1
     itemList = {"apple","waffle","ball","box","table"}
     points = 0
+    face_list={"","",""}
+    face2 = Vec3(0,0,0)
+    face3=Vec3(0,0,0)
 end
 
 --Austin make your game here
 function game1()
+    --Generate random vec3
+    face1 = Vec3(math.random(1,3), math.random(1,3), math.random(1,3))
+
+    --Generate a unique second face
+    repeat
+        face2 = Vec3(math.random(1,3), math.random(1,3), math.random(1,3))
+    until face2 ~= face1
+
+    --Generate a unique third face
+    repeat
+        face3 = Vec3(math.random(1,3), math.random(1,3), math.random(1,3))
+    until face3 ~= face1 and face3 ~= face2
 
 end
 
