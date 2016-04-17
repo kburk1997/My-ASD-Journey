@@ -28,7 +28,7 @@ end
 
 --Austin make your game here
 function game1()
-
+    background(math.random(0,255),math.random(0,255),math.random(0,255),255)
     if bool then
     --Generate random vec3
         face1 = vec3(math.random(1,3), math.random(1,3), math.random(1,3))
