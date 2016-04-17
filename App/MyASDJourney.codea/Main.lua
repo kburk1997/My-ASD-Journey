@@ -44,17 +44,18 @@ function game2()
     bool = false
 
 
-
+    fill(255)
 
         text("The "..item.." is green",WIDTH/4,HEIGHT/6+HEIGHT/8)
-        text("The "..item.." is yellow",WIDTH*3/4,HEIGHT/6+HEIGHT/8)
+        text("The "..item.." is yellow",WIDTH*2.85/4,HEIGHT/6+HEIGHT/8)
         text("The "..item.." is red",WIDTH/4,HEIGHT/8)
-        text("The "..item.." is blue",WIDTH*3/4,HEIGHT/8)
+        text("The "..item.." is blue",WIDTH*2.85/4,HEIGHT/8)
 end
 
 --Draw the four rectangles for the answer choices
 function draw_game2_rectangles()
     rectMode(CORNER)
+    fill(30,30,30,160)
     --Bottom left rectangleS
     rect(WIDTH/30,HEIGHT/30, (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30))
 
