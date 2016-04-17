@@ -37,7 +37,7 @@ function game2()
             speech.say("The "..item.." is blue")
         end
 
-    text("What color is this"..item.."?", WIDTH/2, HEIGHT/2)
+    text("What color is this "..item.."?", WIDTH/2, HEIGHT/2)
     end
     bool = false
 
