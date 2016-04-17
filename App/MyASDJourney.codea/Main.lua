@@ -36,6 +36,25 @@ bodies = {}
     floor = physics.body(POLYGON, vec2(0,20), vec2(0,0), vec2(WIDTH,0), vec2(WIDTH,20))
     floor.type = STATIC
     floor = physics.body(POLYGON, vec2(0,HEIGHT-20), vec2(0,HEIGHT), vec2(WIDTH,HEIGHT), vec2(WIDTH,HEIGHT-20))
+    locations = {}
+    py1 = {}
+    px1 = {}
+    i = 0.25*WIDTH/4
+    z = HEIGHT*3/4
+    index = 1
+    fontSize(45)
+    while index <= #paragraph1 do
+        py1[index] = z
+        px1[index] = i
+        i = i + textSize(" "..((paragraph1[index]).x).." ")
+        index = index + 1
+        if paragraph1[index] == "." then
+            py1[index] = z
+            px1[index] = i
+            table.insert(locations,index)
+            index = index+1
+        end
+    end
 end
 
 --Austin make your game here
