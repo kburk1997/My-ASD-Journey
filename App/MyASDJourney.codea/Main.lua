@@ -54,7 +54,7 @@ end
 
 --Draw the four rectangles for the answer choices
 function draw_game2_rectangles()
-    rectMode(CORNERS)
+    rectMode(CORNER)
     --Bottom left rectangleS
     rect(WIDTH/30,HEIGHT/30, (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30))
 
@@ -62,10 +62,10 @@ function draw_game2_rectangles()
     rect(WIDTH/30,(HEIGHT/6)+(HEIGHT/30), (WIDTH/2)-(WIDTH/15), (HEIGHT/4)-(1.75*HEIGHT/15))
 
     --Bottom Right
-    rect(WIDTH/2,HEIGHT/30, (WIDTH)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30))
+    rect(WIDTH/2,HEIGHT/30, (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30))
 
     --Top right
-    rect(WIDTH/2,(HEIGHT/6)+(HEIGHT/30), (WIDTH)-(WIDTH/15), (HEIGHT/4)-(1.75*HEIGHT/15))
+    rect(WIDTH/2,(HEIGHT/6)+(HEIGHT/30), (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30))
 end
 
 -- This function gets called once every frame
