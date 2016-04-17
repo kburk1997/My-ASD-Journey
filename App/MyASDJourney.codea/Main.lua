@@ -18,6 +18,9 @@ end
 --In this game, the user must select the right answer to "what color is this apple?"
     --while there is a lot of background noise and everything is blurred
 function game2()
+
+    touching = false
+
     fontSize(20)
     
     --Make four rectangles  
@@ -50,6 +53,12 @@ function game2()
     text("The "..item.." is yellow",WIDTH*2.85/4,HEIGHT/6+HEIGHT/8)
     text("The "..item.." is red",WIDTH/4,HEIGHT/8)
     text("The "..item.." is blue",WIDTH*2.85/4,HEIGHT/8)
+
+    if CurrentTouch.state == ENDED then
+        touching=true
+    end
+
+
 end
 
 --Draw the four rectangles for the answer choices
