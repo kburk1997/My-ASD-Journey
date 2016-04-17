@@ -51,8 +51,26 @@ function game1()
 
     --Draw faces
 
-    --Draw correct face in corner
+--draw other faces
+sprite("Project:Face"..math.floor((face1).x), WIDTH/4, HEIGHT/4, WIDTH/6)
+sprite("Project:Nose"..math.floor((face1).y), WIDTH/4, HEIGHT/4, WIDTH/24)
+sprite("Project:eyes"..math.floor((face1).z), WIDTH/4, 1.15*HEIGHT/4, WIDTH/7.5)
+sprite("Project:Face"..math.floor((face2).x), WIDTH/2, HEIGHT/4, WIDTH/6)
+sprite("Project:Nose"..math.floor((face2).y), WIDTH/2, HEIGHT/4, WIDTH/24)
+sprite("Project:eyes"..math.floor((face2).z), WIDTH/2, 1.15*HEIGHT/4, WIDTH/7.5)
+sprite("Project:Face"..math.floor((face3).x), 3*WIDTH/4, HEIGHT/4, WIDTH/6)
+sprite("Project:Nose"..math.floor((face3).y), 3*WIDTH/4,HEIGHT/4, WIDTH/24)
+sprite("Project:eyes"..math.floor((face3).z), 3*WIDTH/4, 1.15*HEIGHT/4, WIDTH/7.5)
 
+--add tint
+tint(255,255,255,82)
+
+--draw noise
+for i= 1,4 do
+    sprite("Project:noise"..i, WIDTH/2, HEIGHT/2, math.random(WIDTH, 2*WIDTH), math.random(HEIGHT, 2*HEIGHT))
+end
+
+--Draw correct face in corner
     if right_answer_position == 1 then
     spriteMode(CENTER)
     sprite("Project:Face"..math.floor((face1).x), WIDTH/4, 7.1*HEIGHT/8, WIDTH/14)
@@ -66,25 +84,6 @@ sprite("Project:eyes"..math.floor(face2.z), WIDTH/4, 7.24*HEIGHT/8, WIDTH/17)
 sprite("Project:Face"..math.floor((face3).x), WIDTH/4, 7.1*HEIGHT/8, WIDTH/14)
 sprite("Project:Nose"..math.floor(face3.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/38,HEIGHT/32)
 sprite("Project:eyes"..math.floor(face3.z), WIDTH/4, 7.24*HEIGHT/8, WIDTH/17)
-end
-
---draw other faces
-sprite("Project:Face"..math.floor((face1).x), WIDTH/4, HEIGHT/4, WIDTH/6)
-sprite("Project:Nose"..math.floor((face1).y), WIDTH/4, HEIGHT/4, WIDTH/24)
-sprite("Project:eyes"..math.floor((face1).z), WIDTH/4, 1.15*HEIGHT/4, WIDTH/7.5)
-sprite("Project:Face"..math.floor((face2).x), WIDTH/2, HEIGHT/4, WIDTH/6)
-sprite("Project:Nose"..math.floor((face2).y), WIDTH/2, HEIGHT/4, WIDTH/24)
-sprite("Project:eyes"..math.floor((face2).z), WIDTH/2, 1.15*HEIGHT/4, WIDTH/7.5)
-sprite("Project:Face"..math.floor((face3).x), 3*WIDTH/4, HEIGHT/4, WIDTH/6)
-sprite("Project:Nose"..math.floor((face3).y), 3*WIDTH/4,HEIGHT/4, WIDTH/24)
-sprite("Project:eyes"..math.floor((face3).z), 3*WIDTH/4, 1.15*HEIGHT/4, WIDTH/7.5)
-
---add tint
-tint(255,255,255,35)
-
---draw noise
-for i= 1,6 do
-    sprite("Project:noise"..i, WIDTH/2, HEIGHT/2, math.random(WIDTH, 2*WIDTH), math.random(HEIGHT, 2*HEIGHT))
 end
 
 --touch functionality
