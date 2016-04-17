@@ -1,8 +1,9 @@
 -- My ASD Journey
-
+supportedOrientations(PORTRAIT_ANY)
+displayMode(FULLSCREEN_NO_BUTTONS)displayMode(FULLSCREEN)
 -- Use this function to perform your initial setup
 function setup()
-    stage = 0
+    stage = 2
     bool = true
     item = ""
      right_answer_position = -1
@@ -45,11 +46,10 @@ function game2()
 
 
 
-        text("The "..item.." is green",,)
-        text("The "..item.." is yellow",,)
-        text("The "..item.." is red",,)
-        text("The "..item.." is blue",,)
-    end
+        text("The "..item.." is green",WIDTH/4,HEIGHT/6+HEIGHT/8)
+        text("The "..item.." is yellow",WIDTH*3/4,HEIGHT/6+HEIGHT/8)
+        text("The "..item.." is red",WIDTH/4,HEIGHT/8)
+        text("The "..item.." is blue",WIDTH*3/4,HEIGHT/8)
 end
 
 --Draw the four rectangles for the answer choices
