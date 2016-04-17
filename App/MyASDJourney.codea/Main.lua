@@ -7,6 +7,7 @@ function setup()
     stage = 2
     bool = true
     item = ""
+    touching = false
      right_answer_position = -1
     itemList = {"apple","waffle","ball","box","table"}
 end
@@ -19,8 +20,6 @@ end
 --In this game, the user must select the right answer to "what color is this apple?"
     --while there is a lot of background noise and everything is blurred
 function game2()
-
-    touching = false
 
     fontSize(20)
     
@@ -50,10 +49,30 @@ function game2()
 
     fill(255)
 
+
     text("The "..item.." is green",WIDTH/4,HEIGHT/6+HEIGHT/8)
     text("The "..item.." is yellow",WIDTH*2.85/4,HEIGHT/6+HEIGHT/8)
     text("The "..item.." is red",WIDTH/4,HEIGHT/8)
     text("The "..item.." is blue",WIDTH*2.85/4,HEIGHT/8)
+
+    --read touches
+
+    if CurrentTouch.state == BEGAN and touching then
+        touching = false
+        if CurrentTouch.x < WIDTH/2 then
+           if CurrentTouch.y < HEIGHT/6 then
+
+            elseif CurrentTouch.y < HEIGHT/6 + (HEIGHT/4)-(1.75*HEIGHT/15) then
+
+            end
+        else
+            if CurrentTouch.y < HEIGHT/6 then
+                
+            elseif CurrentTouch.y < HEIGHT/6 + (HEIGHT/4)-(1.75*HEIGHT/15) then
+
+            end
+        end
+    end
 
     if CurrentTouch.state == ENDED then
         touching=true
