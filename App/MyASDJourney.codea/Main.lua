@@ -294,6 +294,7 @@ function game3()
     fontSize(45)
     while index <= #paragraph1 do
         fill(col.x*255,col.y*255,col.z*255,255)
+        rect(WIDTH/4,HEIGHT/15, WIDTH/8, WIDTH/8)
         if index == locations[1] or index == locations[2] then
             col = vec3(math.random(0,1),math.random(0,1),math.random(0,1))
             fill(col.x*255,col.y*255,col.z*255,255)
