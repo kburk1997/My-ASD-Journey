@@ -4,6 +4,7 @@
 function setup()
     stage = 0
     bool = true
+    item = ""
      right_answer_position = -1
 end
 
@@ -21,18 +22,19 @@ function game2()
     draw_game2_rectangles()
 
     if bool then
+    item = "apple"
         --Randomly select right answer
         --0|1
         --2|3
         right_answer_position  = math.random(0,3)
         if right_answer_position == 0 then
-            speech.say("The apple is green")
+            speech.say("The "..item.." is green")
         elseif right_answer_position == 1 then
-            speech.say("The apple is yellow")
+            speech.say("The "..item.." is yellow")
         elseif right_answer_position == 2 then
-
+            speech.say("The "..item.." is red")
         elseif right_answer_position == 3 then
-
+            speech.say("The "..item.." is blue")
         end
     end
     bool = false
