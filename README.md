@@ -11,5 +11,7 @@ This game is based off of our own personal experiences as well as typical charac
 
 ##More Info on Autism
 [About Autism - Autistic Self-Advocacy Network](http://autisticadvocacy.org/home/about-asan/about-autism/)
+
 [Sensory Issues](http://www.interactingwithautism.com/section/understanding/sensory/1)
+
 [Social Communication with Autism](https://www.iidc.indiana.edu//index.php?pageId=Social-Communication-and-Language-Characteristics-Associated-with-High-Functioning-Verbal-Children-and-Adults-with-ASD)
