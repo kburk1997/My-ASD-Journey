@@ -297,10 +297,10 @@ function game3()
             end
             text(" "..paragraph1[index].." ",px1[index],py1[index])
             index = index + 1
-            if index/rand_word == 0 then
+            if index%rand_word == 0 then
                 index = index + 1
             end
-        end
+    end
 end
 
 -- This function gets called once every frame
