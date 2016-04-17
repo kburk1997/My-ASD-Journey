@@ -79,6 +79,11 @@ sprite("Project:Face"..math.floor((face3).x), 3*WIDTH/4, HEIGHT/4, WIDTH/6)
 sprite("Project:Nose"..math.floor((face3).y), 3*WIDTH/4,HEIGHT/4, WIDTH/24)
 sprite("Project:eyes"..math.floor((face3).z), 3*WIDTH/4, 1.15*HEIGHT/4, WIDTH/7.5)
 
+--draw noise
+for i= 1,6 do
+    sprite("Project:noise"..i, WIDTH/2, HEIGHT/2, math.random(WIDTH, 2*WIDTH), math.random(HEIGHT, 2*HEIGHT))
+end
+
 end
 
 function nextGame()
