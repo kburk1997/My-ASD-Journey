@@ -16,6 +16,9 @@ function setup()
     face2 = vec3(0,0,0)
     face3=vec3(0,0,0)
     speech.volume = 1
+    paragraph1={"I","like","cats",".","I","have","over","100","pictures","of","my","cats","on","my","phone",".","I","am","definitely","not","a","crazy","cat","lady","."}
+    rand_word=0
+    rand_paragraph=1
 bodies = {}
     wall1 = physics.body(POLYGON, vec2(20,0), vec2(0,0), vec2(0,HEIGHT), vec2(20,HEIGHT))
     wall1.type = STATIC
@@ -225,6 +228,11 @@ end
 
 --Word game - identify which sentence is sarcasm
 function game3()
+    --define random nth word to disappear
+    if bool then
+        rand_word=math.random(3,7)
+        rand_paragraph=math.random(1,2)
+    end
 
 end
 
