@@ -3,11 +3,12 @@ supportedOrientations(LANDSCAPE_ANY)
 displayMode(FULLSCREEN_NO_BUTTONS)
 -- Use this function to perform your initial setup
 function setup()
+     math.randomseed(os.date("*t")["month"]*os.date("*t")["day"]*os.date("*t")["hour"]*os.date("*t")["min"]*os.date("*t")["sec"]*os.date("*t")["wday"])
     stage = 2
     bool = true
     item = ""
      right_answer_position = -1
-
+    itemList = {"apple","waffle","ball","box","table"}
 end
 
 --Austin make your game here
@@ -27,7 +28,7 @@ function game2()
     draw_game2_rectangles()
 
     if bool then
-    item = "apple"
+    item = itemList[math.random(1,5)]
         --Randomly select right answer
         --0|1
         --2|3
