@@ -36,6 +36,22 @@ function draw()
     	--Top right
     	rect(WIDTH/2,(HEIGHT/6)+(HEIGHT/30), (WIDTH)-(WIDTH/15), (HEIGHT/4)-(1.75*HEIGHT/15))
 
+        --Randomly select right answer
+        --0|1
+        --2|3
+
+        right_answer_position = math.random(0,3)
+
+        if right_answer_position == 0 then
+
+        elseif right_answer_position == 1 then
+
+        elseif right_answer_position == 2 then
+
+        else
+
+        end
+
 
     end
     
