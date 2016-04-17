@@ -25,16 +25,16 @@ function draw()
     	text("What color is this apple?", WIDTH/2, HEIGHT/2)
 
     	--Make four rectangles  
-    	rect(WIDTH/30,HEIGHT/30, (WIDTH/2)-(WIDTH/15), (HEIGHT/8)-(HEIGHT/15))
+    	rect(WIDTH/30,HEIGHT/30, (WIDTH/2)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30))
 
     	--Top left rectangle
-    	rect(WIDTH/30,HEIGHT/8, (WIDTH/2)-(WIDTH/15), (HEIGHT/4)-(HEIGHT/15))
+    	rect(WIDTH/30,(HEIGHT/6)+(HEIGHT/30), (WIDTH/2)-(WIDTH/15), (HEIGHT/4)-(1.75*HEIGHT/15))
 
     	--Bottom Right
-    	rect(WIDTH/2,HEIGHT/30, (WIDTH)-(WIDTH/15), (HEIGHT/8)-(HEIGHT/15))
+    	rect(WIDTH/2,HEIGHT/30, (WIDTH)-(WIDTH/15), (HEIGHT/6)-(HEIGHT/30))
 
     	--Top right
-    	rect(WIDTH/2,HEIGHT/8, (WIDTH)-(WIDTH/15), (HEIGHT/4)-(HEIGHT/15))
+    	rect(WIDTH/2,(HEIGHT/6+HEIGHT/30), (WIDTH)-(WIDTH/15), (HEIGHT/4)-(1.75*HEIGHT/15))
 
 
     end
