@@ -36,9 +36,10 @@ function game2()
         elseif right_answer_position == 3 then
             speech.say("The "..item.." is blue")
         end
+
+    text("What color is this"..item.."?", WIDTH/2, HEIGHT/2)
     end
     bool = false
-    text("What color is this apple?", WIDTH/2, HEIGHT/2)
 
 
 
