@@ -40,7 +40,7 @@ function setup()
     i = 0.125*WIDTH/4
     z = HEIGHT*3/4
     index = 1
-    fontSize(45)
+    fontSize(45*WIDTH/1024)
     col = vec3(0,0,0)
     while index <= #paragraph1 do
         py1[index] = z
@@ -125,7 +125,7 @@ sprite("Project:Nose"..math.floor(face3.y), WIDTH/4, 7.1*HEIGHT/8, WIDTH/38,HEIG
 sprite("Project:eyes"..math.floor(face3.z), WIDTH/4, 7.24*HEIGHT/8, WIDTH/17)
 end
 fill(255)
-fontSize(50)
+fontSize(50*WIDTH/1024)
 text(math.floor(30+os.difftime(timer,os.time())),WIDTH/2,HEIGHT*7/8)
 if os.difftime(os.time(),timer) >= 30 then
     bool=true
@@ -162,7 +162,7 @@ function game2()
     textMode(CENTER)
     sound(SOUND_EXPLODE, 45885)
     sound(SOUND_EXPLODE, 24166)
-    fontSize(20)
+    fontSize(20*WIDTH/1024)
     physics.gravity(Gravity)
 
     
@@ -250,7 +250,7 @@ function game2()
     end
 
     fill(255)
-    fontSize(50)
+    fontSize(50*WIDTH/1024)
     text(math.floor(30+os.difftime(timer,os.time())),WIDTH/2,HEIGHT*7/8)
     if os.difftime(os.time(),timer) >= 30 then
         bool=true
@@ -292,7 +292,7 @@ function game3()
         bool=false
     end
     index = 1
-    fontSize(45)
+    fontSize(45*WIDTH/1024)
     while index <= #paragraph1 do
         fill(col.x*255,col.y*255,col.z*255,255)
         rect(WIDTH/4,HEIGHT/15, WIDTH/8, WIDTH/8)
@@ -332,7 +332,7 @@ function game3()
     end
     
     fill(255)
-    fontSize(50)
+    fontSize(50*WIDTH/1024)
     text(math.floor(30+os.difftime(timer,os.time())),WIDTH/2,HEIGHT*7/8)
 
     if os.difftime(os.time(),timer) >= 30 then
@@ -350,9 +350,9 @@ function draw()
     if stage == 0 then
         textMode(CENTER)
         fill(0)
-        fontSize(80)
+        fontSize(80*WIDTH/1024)
         text("Sensory Overload Simulator",WIDTH/2,HEIGHT/2)
-        fontSize(45)
+        fontSize(45*WIDTH/1024)
         text("tap to begin",WIDTH/2,HEIGHT/2.4)
         text("SEIZURE RISK WARNING",WIDTH/2,HEIGHT/3)
         text("by Austin Lubetkin and Kathleen Burkhardt",WIDTH/2,HEIGHT/4)
