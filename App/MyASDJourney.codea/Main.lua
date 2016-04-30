@@ -283,7 +283,7 @@ function game3()
     --define random nth word to disappear
     math.randomseed(decider)
     if bool then
-        rand_word=math.random(3,7)
+        rand_word=math.random(3,6)
        -- rand_paragraph=math.random(1,2)
         loop_index=1
         col = vec3(math.random(0,1),math.random(0,1),math.random(0,1))
@@ -295,14 +295,17 @@ function game3()
     fontSize(45*WIDTH/1024)
     while index <= #paragraph1 do
         fill(col.x*255,col.y*255,col.z*255,255)
-        rect(WIDTH/4,HEIGHT/15, WIDTH/8, WIDTH/8)
+        rect(WIDTH/4-50,HEIGHT/15, WIDTH/8, WIDTH/8)
         if index == locations[1] or index == locations[2] then
+            temp = col
+            repeat
             col = vec3(math.random(0,1),math.random(0,1),math.random(0,1))
+            until temp ~= col
             fill(col.x*255,col.y*255,col.z*255,255)
             if index == locations[1] then
-                rect(WIDTH/2,HEIGHT/15, WIDTH/8, WIDTH/8)
+                rect(WIDTH/2-50,HEIGHT/15, WIDTH/8, WIDTH/8)
             else
-                rect(3*WIDTH/4,HEIGHT/15, WIDTH/8, WIDTH/8)
+                rect(3*WIDTH/4-50,HEIGHT/15, WIDTH/8, WIDTH/8)
             end
         end
         if (1.*index)/(1.*rand_word) ~= math.floor(index/rand_word) then
@@ -320,8 +323,8 @@ function game3()
                 stage=0
             else
                 bool=true
-                nextGame()
                 decider = math.random(1,1000)
+                nextGame()
             end
         end
 
@@ -337,8 +340,8 @@ function game3()
 
     if os.difftime(os.time(),timer) >= 30 then
         bool=true
-        nextGame()
         decider = math.random(1,1000)
+        nextGame()
     end
 end
 
