@@ -11,3 +11,13 @@
  *= require_self
  *= require_tree .
  */
+
+	body{
+		color:#aaa;
+		font-family: 'Karla', sans-serif;
+	}
+
+h1,h2,h3{
+	font-family: 'Unica One', cursive;
+	color: #ff6666;
+}
