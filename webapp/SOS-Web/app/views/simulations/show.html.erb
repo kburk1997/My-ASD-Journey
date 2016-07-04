@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @simulation.title %>
+</p>
+
+<p>
+  <strong>Short name:</strong>
+  <%= @simulation.short_name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @simulation.image %>
+</p>
+
+<p>
+  <strong>Instructions:</strong>
+  <%= @simulation.instructions %>
+</p>
+
+<p>
+  <strong>Long desc:</strong>
+  <%= @simulation.long_desc %>
+</p>
+
+<%= link_to 'Edit', edit_simulation_path(@simulation) %> |
+<%= link_to 'Back', simulations_path %>

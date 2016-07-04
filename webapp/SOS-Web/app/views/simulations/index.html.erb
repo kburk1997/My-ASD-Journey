@@ -1,0 +1,35 @@
+<h1>Listing simulations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Short name</th>
+      <th>Image</th>
+      <th>Instructions</th>
+      <th>Long desc</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @simulations.each do |simulation| %>
+      <tr>
+        <td><%= simulation.title %></td>
+        <td><%= simulation.short_name %></td>
+        <td><%= simulation.image %></td>
+        <td><%= simulation.instructions %></td>
+        <td><%= simulation.long_desc %></td>
+        <td><%= link_to 'Show', simulation %></td>
+        <td><%= link_to 'Edit', edit_simulation_path(simulation) %></td>
+        <td><%= link_to 'Destroy', simulation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Simulation', new_simulation_path %>
