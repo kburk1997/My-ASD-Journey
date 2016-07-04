@@ -5,6 +5,8 @@ Sensory Overload Simulator is a mobile mini simulation collection that tries to 
 
 This app was created by Austin Lubetkin and Kathleen Burkhardt at [NY Chi 2016](http://nychi.tech). Sensory Overload Simulator was written in Codea, a simplified but powerful version of Lua.
 
+The web port is in progress and was created by Kathleen Burkhardt.
+
 ##You're SUPPOSED to lose?
 People on the autism spectrum* often get overwhelmed by sensory stimuli such as loud noises, strong smells, and bright lights, leading to a phenomena called "sensory overload". That, combined with difficulty in social situations, makes it hard for people on the spectrum to do everyday tasks such as participate in "small talk" and identify faces in a large crowd.
 
