@@ -1,11 +1,74 @@
+<style>
+body{
+  background:#ff6666;
+  color: #fff !important;
+}
+h1{
+  color: #fff !important;
+  font-size: 72px;
+}
+
+
+
+h2{
+  color: #fff !important;
+}
+
+p{
+  font-size:30px !important;
+  line-height: 34px;
+}
+
+.container-fluid{
+  width: 66%;
+  height:100%;
+}
+.row{
+  margin-top:33%;
+  /*position:relative;
+  vertical-align:middle;*/
+}
+
+.btn{
+  background-color: #ff6666 !important;
+  border-color: #fff !important;
+  color: #fff !important;
+  font-family: 'Unica One', cursive;
+  font-size:30px;
+}
+
+@media screen and (max-width: 768px) {
+  h1{
+    font-size: 54px;
+  }
+  p{
+    font-size:24px !important;
+    line-height:28px;
+  }
+  .btn{
+    font-size:24px !important;
+  }
+}
+
+</style>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<div class="container-fluid text-center">
+<div class="row">
+<h1>
   <%= @simulation.title %>
-</p>
+</h1>
 
-<p>
+<h2>Instructions:</h2><p><%= @simulation.instructions.html_safe %></p>
+
+
+<%= link_to 'Go!', "/#{@simulation.short_name}" , :class => "btn btn-default"%>
+</div>
+</div>
+
+
+<!--<p>
   <strong>Short name:</strong>
   <%= @simulation.short_name %>
 </p>
@@ -16,14 +79,9 @@
 </p>
 
 <p>
-  <strong>Instructions:</strong>
-  <%= @simulation.instructions %>
-</p>
-
-<p>
   <strong>Long desc:</strong>
   <%= @simulation.long_desc %>
-</p>
+</p>-->
 
-<%= link_to 'Edit', edit_simulation_path(@simulation) %> |
-<%= link_to 'Back', simulations_path %>
+<!--<%= link_to 'Edit', edit_simulation_path(@simulation) %> |
+<%= link_to 'Back', simulations_path %>-->

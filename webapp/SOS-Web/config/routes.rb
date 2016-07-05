@@ -7,6 +7,9 @@ SOSWeb::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#index'
 
+  PagesController.action_methods.each do |action|
+    get "/#{action}", to: "pages##{action}", as: "#{action}_page"
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

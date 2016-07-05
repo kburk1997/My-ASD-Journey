@@ -9,32 +9,192 @@
 		padding:100px 25px;
 	}
 
+	.jumbotron h1{
+		color:#fff !important;
+	}
+
 	h1,h2,h3{
 		font-family: 'Unica One', cursive;
 		color: #ff6666;
 	}
+	h3 a{
+		color: #ff6666 !important;
+	}
 	.col-icon{
-		font-size:200px;
+		font-size:150px;
 		color:#ff6666;
+		position: relative;
+		vertical-align: middle;
+		height:100%;
+	}
+	.glyphicon{
+		position: relative;
+		vertical-align:middle;
 	}
 	@media screen and (max-width: 768px) {
-	    .col-sm-4 {
+	    .col-icon {
 	        text-align: center;
 	        margin: 25px 0;
+
 	    }
+	    .container-fluid{
+	    	padding:60px 50px;
+	    	padding-left: 15% !important;
+	    	padding-right: 15% !important;
+    	}
+
+    	.glyphicon{
+    	}
     }
     .container-fluid{
     	padding:60px 50px;
+	    	padding-left: 15% ;
+	    	padding-right: 15%;
+
     }
 
     .bg-light{
-    	background:#ffe6e6;
+    	background:#fff0f0;
     }
 
+    .sim{
+    	background:#fff;
+    	padding:10px;
+    	margin-bottom:20px;
+    	border-radius:7px;
+    }
+
+    .col-xs-9{
+    	text-align: left !important;
+    }
+
+    a{
+    	
+    	text-decoration:none !important;
+    }
+    a:hover{
+    	background-color:transparent !important;
+    	color: #ff6666 !important;
+    }
+
+    .footer{
+    	background: #ff6666;
+    	color: #fff;
+    	padding-top:30px;
+    	padding-bottom:30px;
+    }
+    ul{
+    	padding-left: 0em;
+    
+    }
+    .footer a{
+    	color:#fff !important;
+    }
+    .footer a:hover{
+    	color:#fff !important;
+    }
+
+    .navbar{
+    	background:#ff6666;
+    	font-family: 'Unica One', cursive;
+    	z-index: 9999;
+    	margin-bottom:0;
+    	font-size:12px !important;
+    	border:0;
+    	border-radius:0;
+    	letter-spacing:4px;
+    	line-height:1.43 !important;
+    }
+
+    .navbar a{
+    	color: #fff !important;
+    	font-family: 'Unica One', cursive;
+
+    }
+
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #ff6666 !important;
+    background-color: #fff !important;
+	}	
+
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+	.icon-bar{
+		background-color: #fff !important;
+	}
+
+	.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+    border:none;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:active {
+    background-color: #fff !important;
+	}
+
+.navbar-default .navbar-toggle:focus .icon-bar,.navbar-default .navbar-toggle:active .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar{
+    background-color: #ff6666 !important;
+	}	
+
+.navbar-collapse{
+	border:none;
+}
 </style>
 
 <script>
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+   // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+
 </script>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">AutiSim</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#simulations">SIMULATIONS</a></li>
+        <li><a href="#information">AUTISM RESOURCES</a></li>
+        <!--<li><a href="#footer">CREDITS</a></li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <div class="jumbotron text-center">
 	<h1>AutiSim</h1>
@@ -43,13 +203,13 @@
 
 <div class="container-fluid" id="about">
 	<div class="row">
-		<div class="col-sm-8">
+		<div class="col-sm-9">
 		<h2>About</h2>
 
 		<h4>AutiSim is a mini simulation collection that tries to simulate some of the experiences of living with ASD. Many of the simulations are designed in a way that you are meant to lose. Overall, the simulations aim to promote empathy with the ASD community.</h4>
 		<p>The simulations are based off of my personal experiences as well as typical characteristics of autistic people, and are purposely over-dramatized so that neurotypical people can see a sharper contrast. Autism is a spectrum, so it will affect people differently. For example, one autistic person may be highly affected by the sensory aspect of ASD, while nearly unaffected by social and executive deficits. Meanwhile, another autistic person may be highly affected by social and executive deficits while nearly unaffected by sensory overload, while someone else may be moderately affected by both.</p>
 		</div>
-		<div class= "col-sm-4 col-icon">
+		<div class= "col-sm-3 col-icon">
 			<span class="glyphicon glyphicon-info-sign"></span>
 		</div>
 	</div>
@@ -57,4 +217,62 @@
 
 <div class="container-fluid text-center bg-light" id="simulations">
 <h2>Simulations</h2>
+<%@simulations.each do |s|%>
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+	<div class="sim">
+		<%=image_tag s.image%>
+		<h3><%=link_to s.title,simulation_path(s)%></h3>
+	</div>
+	</div>
+<%end%>
+</div>
+
+<div class="container-fluid" id="information">
+<h2 class="text-center">Autism Resources</h2>
+<div class="row">
+	
+	<div class="col-xs-12 col-sm-6">
+		<h3>Websites</h3>
+		<ul>
+			<li><a href="http://autisticadvocacy.org/">Autistic Self-Advocacy Network&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
+</a></li>
+			<li><a href="http://www.autism.org.uk/">National Autistic Society (UK)&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
+</a></li>
+			<li><a href="http://www.thinkingautismguide.com/">Thinking Person's Guide to Autism&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
+</a></li>
+
+		</ul>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<h3>Books</h3>
+		<ul>
+			<li><a href="https://www.amazon.com/Thinking-Pictures-Expanded-Life-Autism/dp/0307275655">Thinking in Pictures&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
+</a></li>
+			<li><a href="https://www.amazon.com/Mozart-Whale-Aspergers-Love-Story/dp/0743272846/">Mozart and the Whale&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
+</a></li>
+			<li><a href="https://www.amazon.com/Look-Me-Eye-Life-Aspergers/dp/0307396185/">Look Me in the Eye: My Life with Asperger's&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
+</a></li>
+
+		</ul>
+	</div>
+</div>
+</div>
+
+<div class="container-fluid footer" id="footer">
+
+	<div class="row">
+
+		<div class="col-xs-6">
+			<h4>Created by: Kathleen Burkhardt</h4>
+			<ul style="list-style:none;">
+			<li><a href="http://kburk.me"><i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;
+Website</a></li>
+			<li><a href="https://github.com/kburk1997"><i class="fa fa-github" aria-hidden="true"></i>&nbsp;
+Github</a></li>
+			</ul>
+		</div>
+		<div class="col-xs-6" style="text-align: right !important;">
+			<h4><a href="https://github.com/kburk1997/My-ASD-Journey">Source Code</a></h4>
+		</div>
+	</div>
 </div>
