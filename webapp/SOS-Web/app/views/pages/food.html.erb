@@ -1,0 +1,95 @@
+<link href="https://fonts.googleapis.com/css?family=Lora|Parisienne" rel="stylesheet">
+
+
+<style>
+	body{
+		background:#ff6666;
+		color:#fff;
+	}
+	.menu{
+		background: #F2EADC;
+		color: #B2996E !important;
+		font-family: 'Lora', serif;
+		padding:20px;
+		margin-top:20px;
+		margin-bottom:20px;
+		border-radius:5px;
+		width:300px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	.menu h1,h2{
+		color: #B2996E !important;
+		font-family: 'Parisienne', cursive !important;
+
+	}
+
+	.btn{
+	  background-color: #ff6666 !important;
+	  border-color: #fff !important;
+	  color: #fff !important;
+	  font-family: 'Unica One', cursive;
+	  font-size:30px;
+	}
+
+	.menu-items{
+		list-style:none;
+		padding-left: 0em;
+		font-size:16px;
+		line-height:20px;
+	}
+
+	@media screen and (max-width: 768px) {
+
+	  .btn{
+	    font-size:24px !important;
+	  }
+	}
+</style>
+
+<script>
+$(document).ready(function(){
+	//Three lists to randomly pick from
+	var adjectives=["stinky","slimy","wet","burnt","raw","stewed", "lumpy", "rotten"];
+	var ingredients=["feet","rock","turd","ant","toe cheese", "plastic", "leather","tarantula"];
+	var dishes=["casserole","surprise","pasta","supreme","flavored dog food", "pie", "smoothie","sausage"];
+
+	//Create 8 random menu options
+	var menu=[];
+	for(var i=0; i<12; i++){
+		//select random adjective
+		var adjIndex=Math.floor(Math.random()*8);
+		console.log();
+		//select random ingredient
+		var ingIndex=Math.floor(Math.random()*8);
+		
+		//select random dish
+		var dishIndex=Math.floor(Math.random()*8);
+		//combine elements to make a menu item
+		var item=adjectives[adjIndex]+" "+ingredients[ingIndex]+" "+dishes[dishIndex];
+
+		console.log(item);
+
+		var element="<li> <a href=\"/simulations/4/end\">"+item+"</a></li>";
+		console.log(element);
+
+		//Add item to the menu
+		$(".menu-items").append(element);
+	}
+});
+</script>
+
+<div class="container-fluid text-center">
+<div class="menu text-center">
+	<h1>Fancy Restaurant</h1>
+	<h2>No substitutions</h2>
+	<ul class="menu-items">
+
+	</ul>
+</div>
+
+
+<a class="btn btn-default" href="/simulations/4/end">Nope!</a>
+
+</div>

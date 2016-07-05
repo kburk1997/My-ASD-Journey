@@ -1,0 +1,34 @@
+<style>
+	body{
+		background:#ff6666;
+		color:#fff;
+	}
+	canvas{
+		height:100%;
+		width:100%;
+	}	
+</style>
+
+<script>
+$(document).ready(function(){
+
+var canvas = document.getElementById("canvas");
+var ctx=canvas.getContext("2d");
+ctx.fillStyle="#000000";
+ctx.fillRect(0,0,150,75);
+ctx.strokeStyle="#FFFFFF";
+
+ctx.moveTo(0,0);
+ctx.lineTo(200,100);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+
+});
+</script>
+
+<canvas id="canvas">
+
+</canvas>

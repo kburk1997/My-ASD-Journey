@@ -13,6 +13,10 @@ class SimulationsController < ApplicationController
   def show
   end
 
+  def end
+    @simulation=Simulation.find(params[:id])
+  end
+
   # GET /simulations/new
   def new
     @simulation = Simulation.new

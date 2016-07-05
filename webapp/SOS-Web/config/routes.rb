@@ -1,6 +1,8 @@
 SOSWeb::Application.routes.draw do
   resources :simulations
 
+  get '/simulations/:id/end' => 'simulations#end', as: :end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
