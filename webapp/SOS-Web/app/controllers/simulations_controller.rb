@@ -1,6 +1,6 @@
 class SimulationsController < ApplicationController
   before_action :set_simulation, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: ENV["ADMIN_USERNAME"], password: ENV["ADMIN_PASSWORD"], except: [:show]
+  http_basic_authenticate_with name: ENV["ADMIN_USERNAME"], password: ENV["ADMIN_PASSWORD"], except: [:show, :end, :correct]
 
   # GET /simulations
   # GET /simulations.json
@@ -14,6 +14,10 @@ class SimulationsController < ApplicationController
   end
 
   def end
+    @simulation=Simulation.find(params[:id])
+  end
+
+  def correct
     @simulation=Simulation.find(params[:id])
   end
 

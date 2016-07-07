@@ -10,8 +10,59 @@
 </style>
 
 <script>
+//Select a random paragraph from a predefined list.
+var selectParagraph=function(){
+	var paragraphs=[
+{par: "I like cats. I have over 100 pictures of cats on my phone. I am definitely not a crazy cat lady!",sarcasm:2},
+{par: "Nice driving! You managed to completely cut me off. Now I'll be stuck in traffic.",sarcasm:0},
+{par: "3 hour lecture? I would love to! *yawn*",sarcasm:1},
+]
+	var index=Math.floor(Math.random()*paragraphs.length);
+	return paragraphs[index];
+
+};
+
+var appendParagraph=function(paragraph){
+
+};
+
+//Append buttons with links to correct and incorrect pages.
+var appendButtons=function(paragraph){
+	var buttons= getButtons(paragraph.sarcasm);
+	for(var i = 0; i<3; ++i){
+		$(".buttons").append(buttons[i]);
+	}
+};
+
+//Get correct or incorrect links based on a number
+var getButtons=function(sarcasm){
+	var buttons=[];
+	var ordinals=["first","second","third"];
+	//Each link is "end" for now
+	var answers=["end","end","end"];
+
+	//Fill in correct link
+	answers[sarcasm]="correct";
+	//Fill with links to end pages
+	for(var i =0;i<3;++i){
+		buttons.push("<a class=\"btn btn-default\" href=\"/simulations/3/"+answers[i]+"\">The "+ordinals[i]+" sentence</a>");
+		console.log(buttons);
+	}
+	return buttons;
+};
+
+$(document).ready(function(){
+	//Pick a random paragraph
+	var paragraph=selectParagraph();
+	console.log(selectParagraph());
+	appendButtons(paragraph);
+});
+
 </script>
 
-<div class="canvas">
-
+<div class="container-fluid">
+	<div class="header"><h1>Which sentence is sarcasm?</h1></div>
+	<div class="paragraph"></div>
+	<div class="buttons"></div>
 </div>
+

@@ -1,6 +1,6 @@
 <style>
 body{
-  background:#ff6666;
+  background:#00e600;
   color: #fff !important;
 }
 h1{
@@ -8,15 +8,7 @@ h1{
   font-size: 72px;
 }
 
-ul{
-  list-style: none;
-  font-size:30px !important;
-  line-height:34px;
-}
 
-a{
-  color: #fff !important;
-}
 
 h2{
   color: #fff !important;
@@ -46,7 +38,7 @@ p{
 }
 
 .btn{
-  background-color: #ff6666 !important;
+  background-color: #00e600 !important;
   border-color: #fff !important;
   color: #fff !important;
   font-family: 'Unica One', cursive;
@@ -57,7 +49,7 @@ p{
   h1{
     font-size: 54px;
   }
-  p,a{
+  p{
     font-size:24px !important;
     line-height:28px;
   }
@@ -67,17 +59,7 @@ p{
 }
 
 </style>
-<script>
 
-function stopNoise(){
-    if (! localStorage.justOnce) {
-        localStorage.setItem("justOnce", "true");
-        window.location.reload();
-    }
-
-}
-stopNoise();
-</script>
 <p id="notice"><%= notice %></p>
 
 <div class="container-fluid text-center">

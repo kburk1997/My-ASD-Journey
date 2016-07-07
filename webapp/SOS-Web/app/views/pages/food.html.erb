@@ -51,18 +51,18 @@
 <script>
 $(document).ready(function(){
 	//Three lists to randomly pick from
-	var adjectives=["stinky","slimy","wet","burnt","raw","stewed", "lumpy", "rotten"];
-	var ingredients=["feet","rock","turd","ant","toe cheese", "plastic", "leather","tarantula"];
-	var dishes=["casserole","surprise","pasta","supreme","flavored dog food", "pie", "smoothie","sausage"];
+	var adjectives=["stinky","slimy","wet","burnt","raw","stewed", "lumpy", "rotten","squishy","chunky","watery","live"];
+	var ingredients=["feet","rock","turd","ant","toe cheese", "plastic", "leather","tarantula","mayonnaise","mutant veggie","cow teeth"];
+	var dishes=["casserole","surprise","pasta","supreme","dog food", "pie", "smoothie","sausage"];
 
 	//Create 8 random menu options
 	var menu=[];
 	for(var i=0; i<12; i++){
 		//select random adjective
-		var adjIndex=Math.floor(Math.random()*8);
+		var adjIndex=Math.floor(Math.random()*12);
 		console.log();
 		//select random ingredient
-		var ingIndex=Math.floor(Math.random()*8);
+		var ingIndex=Math.floor(Math.random()*11);
 		
 		//select random dish
 		var dishIndex=Math.floor(Math.random()*8);

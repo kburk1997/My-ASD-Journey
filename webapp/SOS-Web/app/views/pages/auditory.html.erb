@@ -1,24 +1,200 @@
 <style>
 	body{
 		background:#ff6666;
-		color:#fff;
+		color:#fff !important;
 	}
 	.canvas{
 		height:100%;
 		width:100%;
-	}	
+	}
+	.container-fluid{
+		width:66%;
+		margin:auto;
+		vertical-align:center;
+		height:100%;
+		padding:auto;
+		padding-top:20%;
+		padding-bottom:20%;
+	}
+	h1{
+		color: #fff !important;
+		font-size:60px;
+		padding-bottom:20px;
+	}
+
+
+	.btn{
+  background-color: #ff6666 !important;
+  border-color: #fff !important;
+  color: #fff !important;
+  font-family: 'Unica One', cursive;
+  font-size:30px;
+  width:100%;
+  height:100%;
+  text-align:center;
+}
+
+.col-xs-6{
+	padding-bottom:20px;
+}
+
+@media screen and (max-width: 768px) {
+  .btn{
+    font-size:20px !important;
+  }
+}
+	
 </style>
 
 <script>
+var annoyingSounds=function(item,color){
+	sound1 = new Audio('sound1.mp3'); 
+	sound1.addEventListener('ended', function() {
+	    this.currentTime = 0;
+	    
+	    this.play();
+	    
+	}, false);
+	sound1.play();
+
+	sound2 = new Audio('sound2.mp3'); 
+	sound2.addEventListener('ended', function() {
+	    this.currentTime = 0;
+	    
+	    speak(item,color);
+	    this.play();
+	}, false);
+	sound2.play();
+};
+
+var speak=function(item,color){
+	//Say sentence
+	var speech="The "+item+" is "+color;
+	console.log(speech);
+	var msg= new SpeechSynthesisUtterance();
+	var voices = window.speechSynthesis.getVoices();
+	
+	msg.volume = 1; // 0 to 1
+	msg.rate = 1; // 0.1 to 10
+	msg.pitch = 1; //0 to 2
+	msg.lang = 'en-US';
+	msg.voice = voices[10]; // Note: some voices don't support altering params
+	msg.voiceURI = 'native';
+	//"Wait" hack- repeatedly say invisible text until actual text
+	msg.text=speech;
+	$('.modal-header').append("<h4 class=\"modal-title\" id=\"myModalLabel\">The "+item+" is "+color+"</h4>");
+	alert(speech);
+	speechSynthesis.speak(msg);
+};
 $(document).ready(function(){
 
-var items = ["apple","waffle","ball","box","table","sky","orange","glass"]
+	
 
-});
+//List of random items
+var items = ["apple","waffle","ball","box","table","sky","orange","glass"];
+
+//Select random item
+var index=Math.floor(Math.random()*8);
+var item=items[index];
+
+//Select random right answer
+var correct= Math.floor(Math.random()*4);
+//console.log(correct);
+
+//match colors to correct
+var colors=["green","yellow","red","blue"];
+var color=colors[correct];
+console.log(color);
+
+//Create elements
+var header = "<h1>What color is the "+item+"?";
+var green;
+var blue;
+var red;
+var yellow;
+
+//Link to correct and incorrect finishing pages according to random number
+if(correct==0){
+	//green
+	green="<a class=\"btn btn-default\" href=\"/simulations/1/correct\">green</a>"
+	yellow="<a class=\"btn btn-default\" href=\"/simulations/1/end\">yellow</a>"
+	red="<a class=\"btn btn-default\" href=\"/simulations/1/end\">red</a>"
+	blue="<a class=\"btn btn-default\" href=\"/simulations/1/end\">blue</a>"
+}
+else if (correct==1){
+	//yellow
+	green="<a class=\"btn btn-default\" href=\"/simulations/1/end\">green</a>"
+	yellow="<a class=\"btn btn-default\" href=\"/simulations/1/correct\">yellow</a>"
+	red="<a class=\"btn btn-default\" href=\"/simulations/1/end\">red</a>"
+	blue="<a class=\"btn btn-default\" href=\"/simulations/1/end\">blue</a>"
+}
+else if (correct==2){
+	//red
+	green="<a class=\"btn btn-default\" href=\"/simulations/1/end\">green</a>"
+	yellow="<a class=\"btn btn-default\" href=\"/simulations/1/end\">yellow</a>"
+	red="<a class=\"btn btn-default\" href=\"/simulations/1/correct\">red</a>"
+	blue="<a class=\"btn btn-default\" href=\"/simulations/1/end\">blue</a>"
+}
+else{
+	//blue
+	green="<a class=\"btn btn-default\" href=\"/simulations/1/end\">green</a>"
+	yellow="<a class=\"btn btn-default\" href=\"/simulations/1/end\">yellow</a>"
+	red="<a class=\"btn btn-default\" href=\"/simulations/1/end\">red</a>"
+	blue="<a class=\"btn btn-default\" href=\"/simulations/1/correct\">blue</a>"
+}
+//Append heading
+$(".question").append(header);
+
+//Append color buttons
+$("#green").append(green);
+$("#yellow").append(yellow);
+$("#red").append(red);
+$("#blue").append(blue);
+
+
+//wait 1 second before speaking
+//Play annoying sounds
+	annoyingSounds(item,color);
+localStorage.setItem("justOnce", "false");});
 </script>
 
-<h1></h1>
+
+<div class="container-fluid  text-center">
+<div class="question"></div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="buttons">
+<div class="row">
+	<div class="col-xs-6" id="green">
+	</div>
+
+	<div class="col-xs-6" id="yellow">
+	</div>
+
+</div>
+
+<div class="row">
+<div class="col-xs-6" id="red">
+	</div>
+
+	<div class="col-xs-6" id="blue">
+	</div>
+</div>
+</div>
+
+</div>
 
 <div class="canvas">
 
 </div>
+
+<script type="text/javascript" src="https://rawgithub.com/hiddentao/google-tts/master/google-tts.min.js"></script>
