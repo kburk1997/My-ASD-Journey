@@ -1,15 +1,56 @@
 <style>
 	body{
 		background:#ff6666;
-		color:#fff;
+		color:#fff !important;
 	}
 	.canvas{
 		height:100%;
 		width:100%;
-	}	
+	}
+	h1{
+		color:#fff !important;
+		font-size:60px;
+	}
+	.btn{
+	  background-color: #ff6666 !important;
+	  border-color: #fff !important;
+	  color: #fff !important;
+	  font-family: 'Unica One', cursive;
+	  font-size:30px;
+	  width:30%;
+	  height:100%;
+	  text-align:center;
+	  margin:10px;
+
+	}
+	.paragraph{
+		font-size:30px;
+		padding:20px;
+	}
+	.buttons{
+		padding:20px;
+
+	}
+
+	.header{
+		padding: 0 20px;
+	}
+	@media screen and (max-width: 1046px) {
+  	.btn{
+    width:100% !important;
+  	}
+}
+
+.container-fluid{
+	padding-top:20%;
+}
 </style>
 
 <script>
+
+//Create global interval variable
+
+var interval="";
 //Select a random paragraph from a predefined list.
 var selectParagraph=function(){
 	var paragraphs=[
@@ -22,8 +63,16 @@ var selectParagraph=function(){
 
 };
 
+//Split the paragraph into words and append each word.
 var appendParagraph=function(paragraph){
-
+	var words=paragraph.par.split(" ");
+	//console.log(words);
+	//Append each word
+	for(var i = 0; i<words.length; i++){
+		var element="<span id=\""+i+"\">"+words[i]+" </span>";
+		//console.log(element);
+		$(".paragraph").append(element);
+	} 
 };
 
 //Append buttons with links to correct and incorrect pages.
@@ -46,23 +95,70 @@ var getButtons=function(sarcasm){
 	//Fill with links to end pages
 	for(var i =0;i<3;++i){
 		buttons.push("<a class=\"btn btn-default\" href=\"/simulations/3/"+answers[i]+"\">The "+ordinals[i]+" sentence</a>");
-		console.log(buttons);
+		//console.log(buttons);
 	}
 	return buttons;
 };
 
+var disappear=function(){
+	//Get all words in the div paragraph
+	var words=$(".paragraph").children();
+	//console.log(words);
+
+	//First perform sanity check to make sure not all elements are hidden
+	if (!sanityCheck(words))
+		return;
+	//Select a random word to get rid of that is not already hidden
+	var alreadyHidden = true;
+	while(alreadyHidden){
+		//Select a random index
+		var index= Math.floor(Math.random()*words.length);
+		var elementID="#"+index;
+		//console.log($(elementID));
+		//Check if this element is not already hidden
+		if($(elementID).css("visibility")=="visible"){
+			alreadyHidden=false;
+			//Hide element
+			$(elementID).css("visibility","hidden");
+			console.log("break");
+
+		}
+	}
+};
+
+//Return false if all words are hidden
+var sanityCheck=function(words){
+	//loop through each word
+	for(var i =0; i<words.length; i++){
+		var elementID="#"+i;
+		//console.log($(elementID));
+		//Check if this element is not already hidden
+		if($(elementID).css("visibility")=="visible"){
+			//This element is visible, return true
+			return true;
+		}
+	}
+	//Return false if not a single element is visible
+	return false;
+};
+
 $(document).ready(function(){
-	//Pick a random paragraph
+	//Pick a random paragraph and load it on the page
 	var paragraph=selectParagraph();
-	console.log(selectParagraph());
+	//console.log(selectParagraph());
 	appendButtons(paragraph);
+	appendParagraph(paragraph);
+
+	//Make words disappear every two and a half seconds
+	interval = setInterval(disappear,2500);
+	
 });
 
 </script>
 
 <div class="container-fluid">
-	<div class="header"><h1>Which sentence is sarcasm?</h1></div>
-	<div class="paragraph"></div>
-	<div class="buttons"></div>
+	<div class="header text-center"><h1>Which sentence is sarcasm?</h1></div>
+	<div class="paragraph text-center"></div>
+	<div class="buttons text-center"></div>
 </div>
 

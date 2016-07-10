@@ -74,7 +74,7 @@ var speak=function(item,color){
 	var msg= new SpeechSynthesisUtterance();
 	var voices = window.speechSynthesis.getVoices();
 	
-	msg.volume = 1; // 0 to 1
+	msg.volume = 0.5; // 0 to 1
 	msg.rate = 1; // 0.1 to 10
 	msg.pitch = 1; //0 to 2
 	msg.lang = 'en-US';
@@ -83,7 +83,6 @@ var speak=function(item,color){
 	//"Wait" hack- repeatedly say invisible text until actual text
 	msg.text=speech;
 	$('.modal-header').append("<h4 class=\"modal-title\" id=\"myModalLabel\">The "+item+" is "+color+"</h4>");
-	alert(speech);
 	speechSynthesis.speak(msg);
 };
 $(document).ready(function(){
@@ -160,6 +159,7 @@ localStorage.setItem("justOnce", "false");});
 
 
 <div class="container-fluid  text-center">
+<p>Please use Google Chrome for this simulation to work!</p>
 <div class="question"></div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
