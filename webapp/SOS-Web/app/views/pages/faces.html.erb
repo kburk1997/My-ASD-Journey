@@ -3,32 +3,468 @@
 		background:#ff6666;
 		color:#fff;
 	}
-	canvas{
-		height:100%;
-		width:100%;
-	}	
+
+	.targetFace{
+		
+		height:123px;
+		width:75px;
+		background-size:75px;
+		float:left;
+		margin-right:25px;
+	}
+
+	.face1{
+		background-image: url('Face1.png');
+	}
+
+	.face2{
+		background-image: url('Face2.png');
+	}
+
+	.face3{
+		background-image: url('Face3.png');
+	}
+
+	.targetNose{
+		width:18px;
+		background-size:18px;
+		margin-left:29px;
+	}
+
+	.targetNose.nose1{
+		height:30px;
+		margin-top:-15px;
+	}
+
+	.targetNose.nose2{
+		height:25px;
+		margin-top:-10px;
+	}
+
+	.targetNose.nose3{
+		height:28px;
+		margin-top:-7px;
+		margin-left:27px!important;
+	}
+
+	.nose1{
+		background-image: url('Nose1.png');
+	}
+
+	.nose2{
+		background-image: url('Nose2.png');
+	}
+
+	.nose3{
+		background-image: url('Nose3.png');
+	}
+
+	.targetEyes{
+		background-size:65px;
+	}
+
+	.targetEyes.eyes1{
+		height:30px;
+		width:65px;
+		margin-top:35px;
+		margin-left:5px;
+				
+
+	}
+
+	.targetEyes.eyes2{
+		height:30px;
+		width:65px;
+		margin-top:32px;
+		margin-left:5px;
+			
+
+	}
+
+	.targetEyes.eyes3{
+		height:20px;
+		width:65px;
+		margin-top:35px;
+		margin-left:5px;
+		
+
+	}
+
+	.eyes1{
+		background-image: url('eyes1.png');
+	}
+
+	.eyes2{
+		background-image: url('eyes2.png');
+	}
+
+	.eyes3{
+		background-image: url('eyes3.png');
+
+	}
+
+	@-webkit-keyframes blink{
+		0%{opacity:0;}
+		50% {opacity:1;}
+		100%{opacity:0;}
+	}
+
+	@keyframes blink{
+		0%{opacity:0;}
+		50% {opacity:1;}
+		100%{opacity:0;}
+	}
+
+	@-webkit-keyframes move-vertical{
+		0%{margin-top:0%;}
+		50%{margin-top:300%;}
+		100%{margin-top:0%;}
+	}
+
+	@keyframes move-vertical{
+		0%{margin-top:0%;}
+		50%{margin-top:300%;}
+		100%{margin-top:0%;}
+	}
+
+
+	@-webkit-keyframes move-horizontal{
+		0%{margin-left:0%;}
+		50%{margin-left:100%;}
+		100%{margin-left:0%;}
+	}
+
+	@keyframes move-horizontal{
+		0%{margin-left:0%;}
+		50%{margin-left:100%;}
+		100%{margin-left:0%;}
+	}
+
+	.gameFace{
+		width:150px;
+		height:246px;
+		background-size:150px;
+		float:left;
+		-webkit-animation-name:move-vertical;
+				animation-name:move-vertical;
+		-webkit-animation-duration:2.5s;
+		        animation-duration:2.5s;
+		-webkit-animation-iteration-count: infinite;
+		        animation-iteration-count: infinite;
+	}
+
+	#two{
+		-webkit-animation-delay: 1.25s;
+				animation-delay: 1.25s;
+	}
+
+	.gameEyes{
+		background-size:130px;
+		display:inline-block;
+		z-index:999;
+	}
+
+	.gameEyes.eyes1{
+		height:60px;
+		width:130px;
+		margin-top:60px;
+		margin-left:10px;
+		-webkit-animation-name: blink;
+		        animation-name: blink;
+		-webkit-animation-duration:0.5s;
+		        animation-duration:0.5s;
+		-webkit-animation-iteration-count: infinite;
+		        animation-iteration-count: infinite;
+
+	}
+
+	.gameEyes.eyes2{
+		height:60px;
+		width:130px;
+		margin-top:64px;
+		margin-left:10px;
+		-webkit-animation-name: blink;
+		        animation-name: blink;
+		-webkit-animation-duration:0.5s;
+		        animation-duration:0.5s;
+		-webkit-animation-iteration-count: infinite;
+		        animation-iteration-count: infinite;
+	}
+
+	.gameEyes.eyes3{
+		height:40px;
+		width:130px;
+		margin-top:70px;
+		margin-left:10px;
+		-webkit-animation-name: blink;
+		        animation-name: blink;
+		-webkit-animation-duration:0.5s;
+		        animation-duration:0.5s;
+		-webkit-animation-iteration-count: infinite;
+		        animation-iteration-count: infinite;	
+	}
+
+	.gameNose{
+		width:36px;
+		background-size:36px;
+		margin-left:58px;
+	}
+
+	.gameNose.nose1{
+		height:60px;
+		margin-top:-30px;	
+	}
+
+	.gameNose.nose2{
+		height:50px;
+		margin-top:-20px;
+	}
+
+	.gameNose.nose3{
+		height:56px;
+		margin-top:-20px;
+		margin-left:56px!important;
+	}
+	.heading{
+		padding-top:10%;
+		padding-left:25px;
+		margin-left:25px;
+		display:inline;
+	}
+	h1{
+		color:#fff !important;
+	}
+	.header{
+		height:163px;
+		padding:20px;
+	}
+
+	.container-fluid{
+		margin-left:25%;
+		margin-top:20px;
+	}
+
+	@media screen and (max-width: 768px) {
+		.container-fluid{
+		margin-left:0!important;
+		}
+
+		.gameFace{
+		-webkit-animation-name: move-horizontal;
+		        animation-name: move-horizontal;
+		}
+	}
+
+	.face-wrapper{
+		height:300px;
+		width:150px;
+		float:left;
+				margin-right:50px;
+
+	}
+	.btn{
+		text-align:center;
+		margin-top:10px;
+
+		background-color: #ff6666 !important;
+  border-color: #fff !important;
+  color: #fff !important;
+  font-family: 'Unica One', cursive;
+  font-size:30px;
+  text-align:center;
+  	margin-right:50px;
+	}
 </style>
 
 <script>
+
+//Define global lists of features to select from.
+var face_list=["face1","face2","face3"];
+var eyes_list=["eyes1","eyes2","eyes3"];
+var nose_list=["nose1","nose2","nose3"];
+
+//Define global face constructor
+function face_object(face_value,eyes_value,nose_value){
+	this.face=face_value;
+	this.eyes=eyes_value;
+	this.nose=nose_value;
+}
+
+/*Returns an object containing the face, nose, and eye value
+	for the randomly generated correct face.*/
+function generate_target_face(){
+	//Select random face from the list.
+	var face_index=Math.floor(Math.random()*3);
+	
+	//Select random eyes
+	var eyes_index=Math.floor(Math.random()*3);
+
+	//Select random nose
+	var nose_index=Math.floor(Math.random()*3);
+
+	//Generate face based on values
+	var target_face=new face_object(face_list[face_index],eyes_list[eyes_index],nose_list[nose_index]);
+
+	console.log(target_face);
+	return target_face;
+}
+
+/*Returns a random face different from the target face.
+	To make the game more difficult, the face object is 
+	exactly the same as the target face.*/
+function generate_incorrect_face(target_face){
+	var new_face=new face_object(target_face.face,target_face.eyes,target_face.nose);
+	/*Keep generating random faces until at least
+		one feature is different.*/
+	var different=false;
+	while(!different){
+		//Select random pair of eyes
+		var eyes_index=Math.floor(Math.random()*3);
+		new_face.eyes=eyes_list[eyes_index];
+
+		//Select random nose
+		var nose_index=Math.floor(Math.random()*3);
+		new_face.nose=nose_list[nose_index];
+
+		//Check to see if one of the features differ.
+		if(new_face.eyes != target_face.eyes || new_face.nose != target_face.nose){
+			different=true;
+		}
+	}
+	//console.log(new_face);
+	return new_face;
+}
+
+/*Return a list of all the random faces, in order.*/
+function generate_face_list(target_face,correct_index){
+	//Create empty list
+	var faces=[];
+	for(var i = 0;i<3;i++){
+		//First check if this is the position of the correct face
+		if(i==correct_index){
+			faces.push(target_face)
+		}
+		else{
+			var face=generate_incorrect_face(target_face);
+			faces.push(face);
+		}
+	}
+	console.log(faces);
+	return faces;
+}
+
+/*Display the target face in the upper left.*/
+function display_target_face(target_face){
+	//First select the target face div.
+	var target=$(".targetFace");
+	//Apply appropriate classes to face, eyes, and nose
+	target.addClass(target_face.face);
+	$(".targetEyes").addClass(target_face.eyes);
+	$(".targetNose").addClass(target_face.nose);
+}
+
+/*Display all of the faces in the center.*/
+function display_faces(faces){
+	//Select all game faces
+	var game_faces=$(".gameFace");
+	console.log(game_faces);
+	//Loop through each face.
+	for (var i = 0;i<3;i++){
+		//Select the game face div and its children
+		var game_face=game_faces[i];
+		var children=$(game_face).children();
+		var game_eyes=children[0];
+		var game_nose=children[1];
+		//console.log(game_eyes);
+		//console.log(game_nose);
+		//Add face class
+		$(game_faces[i]).addClass(faces[i].face);
+		//Add eye class
+		$(game_eyes).addClass(faces[i].eyes);
+		$(game_nose).addClass(faces[i].nose);
+	}
+}
+
+//Make a random face disappear
+function disappear(){
+	var game_faces=$(".gameFace");
+
+}
+
+function generate_buttons(face_objects, correct_index){
+	//Loop through each object
+	for(var i = 0; i<3;i++){
+		//store a URL for the button to link to
+		var button_url="";
+		//Check if we are at the correct index
+		if(i==correct_index){
+			button_url="/simulations/2/correct"
+		}
+		else{
+			button_url="/simulations/2/end"
+		}
+		//Construct button
+		var button="<a class=\"btn btn-default\" href=\""+button_url+"\">This one!</a>";
+		//Append button to face wrapper
+		$(face_objects[i]).append(button);
+	}
+}
+
 $(document).ready(function(){
-
-var canvas = document.getElementById("canvas");
-var ctx=canvas.getContext("2d");
-ctx.fillStyle="#000000";
-ctx.fillRect(0,0,150,75);
-ctx.strokeStyle="#FFFFFF";
-
-ctx.moveTo(0,0);
-ctx.lineTo(200,100);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.arc(95,50,40,0,2*Math.PI);
-ctx.stroke();
-
+	//Select correct index
+	var correct_index=Math.floor(Math.random()*3);
+	//Select all face-wrapper divs
+	var face_objects=$(".faces").children();
+	//Generate buttons corresponding to correct and incorrect faces
+	generate_buttons(face_objects, correct_index);
+	//Generate correct face
+	var target_face=generate_target_face();
+	//Display correct face up top
+	display_target_face(target_face);
+	//Generate a list of the faces
+	var faces=generate_face_list(target_face,correct_index);
+	display_faces(faces);
+	setInterval(blur_faces(),500);
 });
 </script>
+<div class="container-fluid">
+<div class="header">
+	<div class="targetFace">
+		<div class="targetEyes">
+		</div>
+		<div class="targetNose">
+		</div>
+	</div>
+	<div class="heading">
+		<h1>Find me!</h1>
+	</div>
+</div>
 
-<canvas id="canvas">
+<div class="faces">
+	<div class="face-wrapper">
+		<div class = "gameFace"id="one">
+			<div class="gameEyes">
+			</div>
+			<div class="gameNose">
+			</div>
+		</div>
+	</div>
+	<div class="face-wrapper">
+		<div class = "gameFace"id="two">
+			<div class="gameEyes">
+			</div>
+			<div class="gameNose">
+			</div>
+		</div>
+	</div>
+	<div class="face-wrapper">
+		<div class = "gameFace"id="three">
+			<div class="gameEyes">
+			</div>
+			<div class="gameNose">
+			</div>
+		</div>
+	</div>
+</div>
 
-</canvas>
+</div>

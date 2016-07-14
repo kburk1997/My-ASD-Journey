@@ -21,15 +21,18 @@
 		color: #ff6666 !important;
 	}
 	.col-icon{
+		text-align:center;
 		font-size:150px;
 		color:#ff6666;
 		position: relative;
 		vertical-align: middle;
 		height:100%;
+
 	}
 	.glyphicon{
 		position: relative;
 		vertical-align:middle;
+		width:100%;
 	}
 	@media screen and (max-width: 768px) {
 	    .col-icon {
@@ -83,7 +86,7 @@
     	padding-top:30px;
     	padding-bottom:30px;
     }
-    ul{
+    .link-list{
     	padding-left: 0em;
     
     }
@@ -148,7 +151,54 @@
 
 .sim img{
 		max-width:100%;
+		width:100%;
 	}
+
+/*.carousel-caption{
+
+  color:#fff;
+  position:absolute;
+  z-index:12;
+  top:50%;
+  left:0;
+  width:100%;
+  text-align:center;
+}*/
+
+.carousel-indicators li{
+	border:1px solid #ff6666;
+}
+
+.carousel-indicators .active{
+	background-color: #ff6666;
+}
+
+
+.item img{
+	margin:0 auto;
+	min-height:300px;
+	max-height:300px;
+	max-width:100%;
+}
+
+.item .image-wrapper{
+	height:300px;
+	background-color: #ff6666;
+}
+
+.carousel{
+	margin:60px 50px;
+}
+
+.carousel-caption {
+  z-index: 1;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 400px;
+  background-color:#fff0f0;
+}
 </style>
 
 <script>
@@ -177,6 +227,9 @@ $(document).ready(function(){
       });
     } // End if
   });
+
+  $('.carousel').carousel();
+
 })
 
 </script>
@@ -195,7 +248,9 @@ $(document).ready(function(){
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#simulations">SIMULATIONS</a></li>
-        <li><a href="#information">AUTISM RESOURCES</a></li>
+        <li><a href="#faq">AUTISM FAQ</a></li>
+
+        <li><a href="#information">RESOURCES</a></li>
         <!--<li><a href="#footer">CREDITS</a></li>-->
       </ul>
     </div>
@@ -223,23 +278,99 @@ $(document).ready(function(){
 
 <div class="container-fluid text-center bg-light" id="simulations">
 <h2>Simulations</h2>
-<%@simulations.each do |s|%>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+<% @simulations.each_with_index do |s, i| %>
+  <li data-target="#carousel-example-generic" data-slide-to=#{i) class="#{'active' if i == 0}"></li>
+<% end %>
+    <!--<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+  <%@simulations.each do |s|%>
+
+    <div class="item <%="active" if s == @simulations.first%>">
+    	<div class="image-wrapper"><%=image_tag s.image%></div>
+      <div class="carousel-caption">
+        <h3><%=link_to s.title,simulation_path(s)%></h3>
+      </div>
+    </div>
+
+    <%end%>
+   <!--<div class="item">
+      <img src="..." alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>-->
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<!--<%@simulations.each do |s|%>
 	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 	<div class="sim">
 		<%=image_tag s.image%>
 		<h3><%=link_to s.title,simulation_path(s)%></h3>
 	</div>
 	</div>
-<%end%>
+<%end%>-->
 </div>
 
-<div class="container-fluid" id="information">
+<div class="container-fluid" id="faq">
+<h2 class="text-center">Autism FAQ</h2>
+<div class="row">
+		<div class= "col-sm-3 col-icon">
+			<span class="glyphicon glyphicon-question-sign"></span>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-12">
+			<h4>What is autism?</h4>
+			Autism is a spectrum of neurological differences that affects approximately one percent of the population.
+			<h4>Do all autistic people share the same characteristics?</h4>
+			No, autism manifests itself differently in each individual. However, many (not all) autistic people share the following characteristics to some degree:
+			<ul>
+			<li>Sensory differences</li>
+			<li>Difficulty with social skills and communication</li>
+			<li>Executive functioning differences</li>
+			<li>Need for routine</li>
+			<li>Special interests</li>
+			</ul>
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-12">
+			<h4>Do vaccines cause autism?</h4>
+			No, there is <a href="http://www.cdc.gov/vaccinesafety/concerns/autism.html">no link between vaccines and autism</a>. In fact, many autistic people feel that the anti-vax movement creates unneccessary fearmongering regarding autism.
+			<h4>Can autistic people live a normal life?</h4>
+			Absolutely! While autistic adults and young people may need support to some degree, many autistic people go on to college and/or the workplace. It has even been suggested that <a href="https://www.newscientist.com/article/dn3676-einstein-and-newton-showed-signs-of-autism">some of history's greatest scientists showed signs of autism</a>.
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-12">
+			<h4>Person-first or identity-first language?</h4>
+			Many people with disabilities prefer "person-first" language, putting the person before the disability, e.g."person with disability". This website primarily uses identity-first language because many people in the Autistic community believe that autism is part of their identity.
+			<h4>I've been told autism is overdiagnosed/part of a government conspiracy- is that true?</h4>
+			No, doctors have just been getting better at identifying signs of autism. Any "conspiracy" stems from ignorance. Don't believe everything you read on the Internet!
+		</div>
+</div>
+</div>
+<div class="container-fluid bg-light" id="information">
 <h2 class="text-center">Autism Resources</h2>
 <div class="row">
 	
 	<div class="col-xs-12 col-sm-6">
 		<h3>Websites</h3>
-		<ul>
+		<ul class="link-list">
 			<li><a href="http://autisticadvocacy.org/">Autistic Self-Advocacy Network&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
 </a></li>
 			<li><a href="http://www.autism.org.uk/">National Autistic Society (UK)&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
@@ -251,7 +382,7 @@ $(document).ready(function(){
 	</div>
 	<div class="col-xs-12 col-sm-6">
 		<h3>Books</h3>
-		<ul>
+		<ul class="link-list">
 			<li><a href="https://www.amazon.com/Thinking-Pictures-Expanded-Life-Autism/dp/0307275655">Thinking in Pictures&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
 </a></li>
 			<li><a href="https://www.amazon.com/Mozart-Whale-Aspergers-Love-Story/dp/0743272846/">Mozart and the Whale&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
