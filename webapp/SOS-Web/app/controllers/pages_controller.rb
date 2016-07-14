@@ -18,4 +18,8 @@ class PagesController < ApplicationController
 	def food
 
 	end
+
+	def literal
+
+	end
 end

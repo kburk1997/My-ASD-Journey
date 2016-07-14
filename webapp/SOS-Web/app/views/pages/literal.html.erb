@@ -7,20 +7,68 @@ body{
 		color:#fff !important;
 		font-size:60px;
 	}
+	img{
+		max-height:300px;
+	}
+	.container-fluid{
+		padding:16%;
+	}
 </style>
 
 <script>
+/*Create global objects containing the phrase and
+	correct and incorrect images for those phrases.*/
+var phrases=[{phrase: "tortoiseshell cat", 
+			  correct_image:"turtle_cat.jpg", 
+			  incorrect_image: "jojo.jpg"},
+			  {phrase: "animal husbandry", 
+			  correct_image:"horse bride.jpg",
+			  incorrect_image: "animal-husbandry.jpg"}];
+
+function correct_image_tag(phrase){
+	return "<a href=\"/simulations/5/correct\"><img src=\""
+	+phrase.correct_image+"\"></a>";
+}
+
+function incorrect_image_tag(phrase){
+	return "<a href=\"/simulations/5/end\"><img src=\""
+	+phrase.incorrect_image+"\"></a>";
+}
+
+function display_images(phrase, correct_index){
+	if(correct_index==0){
+		$("#image1").append(correct_image_tag(phrase));
+		$("#image2").append(incorrect_image_tag(phrase));
+	}
+	else{
+		$("#image2").append(correct_image_tag(phrase));
+		$("#image1").append(incorrect_image_tag(phrase));
+	}
+}
+
+function display(index){
+	var display_phrase=phrases[index];
+	console.log(display_phrase);
+	$(".phrase").append(display_phrase.phrase);
+	var correct_index=Math.floor(Math.random()*2);
+	display_images(display_phrase,correct_index);
+};
+
+$(document).ready(function(){
+	var random_index=Math.floor(Math.random()*phrases.length);
+	display(random_index);
+});
 
 </script>
 
 <div class="container-fluid">
-	<h1 class="phrase"></h1>
+	<h1 class="phrase text-center"></h1>
 	<div class="row">
-		<div class="col-xs-6" id="image1">
-			
+		<div class="col-xs-6">
+			<div class="thumbnail" id="image1"></div>
 		</div>
-		<div class="col-xs-6" id="image2">
-			
+		<div class="col-xs-6">
+			<div class="thumbnail" id="image2"></div>
 		</div>
 	</div>
 </div>
