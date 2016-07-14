@@ -20,3 +20,7 @@
 
 #Ignore admin passwords, API keys
 /config/local_env.yml
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
